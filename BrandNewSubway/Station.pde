@@ -51,9 +51,11 @@ class Station {
   
   Line addLine (Line l) { 
     lines.add (l); 
+    return l; 
   }
   
   Line remLine (Line l) { 
     lines.remove (l); 
+    return l; 
   }
 }
