@@ -1,3 +1,5 @@
+ArrayList<Line> lines = new ArrayList<Line>();
+ArrayList<Station> stns = new ArrayList<Stations>();
 class Line {
   int order;
   String name;
@@ -42,10 +44,11 @@ class Station {
 class Menu {
   float xst;
   float wth;
+  ArrayList<Button> btns;
   public Menu() {
     xst = width * 0.65;
     wth = width * 0.35;
-    
+    btns = new ArrayList<Button>();
   }
   void display() {
     fill(50);
@@ -81,54 +84,7 @@ class Menu {
     }
   }
   
-  Line[] orangelines () { 
-    Line[] bdfm = new Line [4]; 
-    bdfm[0] = new Line ("B", color (255,128,0));
-    bdfm[1] = new Line ("D", color (255,128,0));
-    bdfm[2] = new Line ("F", color (255,128,0));
-    bdfm[3] = new Line ("M", color (255,128,0));
-    return bdfm; 
-  }
   
-  Line[] G () { 
-    Line[] g = new Line [1]; 
-    g[0] = new Line ("G", color (128,255,0));
-    return g; 
-  }
-  
-  Line[] brownlines () { 
-    Line[] jz = new Line [2]; 
-    jz[0] = new Line ("J", color (160,82,45));
-    jz[1] = new Line ("Z", color (160,82,45));
-    return jz; 
-  }
-  
-  Line[] greylines () { 
-    Line[] ls = new Line [2]; 
-    ls[0] = new Line ("L", color (169,169,169));
-    ls[1] = new Line ("S", color (169,169,169));
-    return ls; 
-  }
-  
-  Line[] redlines () { 
-    Line[] ott = new Line [3]; 
-    ott[0] = new Line ("1", color (255,0,0));
-    ott[1] = new Line ("2", color (255,0,0));
-    ott[2] = new Line ("3", color (255,0,0));
-    return ott; 
-  }
-  
-  Line[] greenlines () { 
-    Line[] ffs = new Line [3]; 
-    ffs[0] = new Line ("4", color (0,255,0));
-    ffs[1] = new Line ("5", color (0,255,0));
-    ffs[2] = new Line ("6", color (0,255,0));
-    return ffs; 
-  }
-  
-  Line seven () { 
-    return new Line ("7", color (204,0,204)); 
-  }
 }
 class Button {
   int type; //0: line, 1: custom line
@@ -146,12 +102,33 @@ class Button {
     }
   }
 }
-void newStn(float x, float y, String n) {
-  Station stn = new Station(x,y,n);
+
+void mouseClicked() {
+  
 }
+
 void setup() {
   size(1200,800);
   fill(255);
+  
+  color orange = color(255,140,0);
+  color red = color(239,52,52);
+  color blue = color(0,0,204);
+  
+  Line B = new Line("B", orange);
+  Line D = new Line("D", orange);
+  Line F = new Line("F", orange);
+  Line M = new Line("M", orange);
+  Line A = new Line("A", blue);
+  Line C = new Line("C", blue);
+  Line E = new Line("E", blue);
+  lines.add(A);
+  lines.add(C);
+  lines.add(E);
+  lines.add(B);
+  lines.add(D);
+  lines.add(F);
+  lines.add(M);
 }
 void draw() {
   background(255);
