@@ -8,15 +8,6 @@ class Line {
     name = st;
     stations = new ArrayList<Station>();
   }
-  
-  void display (float x, float y) { 
-    stroke (0,0,255); 
-    fill (lcl); 
-    ellipse (x,y,45,45); 
-    textSize (32); 
-    fill (255); 
-    text (name, x - 10, y + 10); 
-  }
 }
 class Station {
   boolean express;
@@ -69,15 +60,16 @@ class Menu {
     return ace; 
   }
   
-  void displayBlueLines () { 
+  void displayBlueLines () {
     Line[] ace = bluelines ();
-    float[][] xys = {{xst + 7.5 * 1 + 90 * 0 + 45, 120},
-                     {xst + 7.5 * 2 + 90 * 1 + 45, 120},
-                     {xst + 7.5 * 3 + 90 * 2 + 45, 120}};
-    int coors = 0; 
-    for (Line lin: ace) { 
-      lin.display (xys[coors][0], xys[coors][1]); 
-      coors ++; 
+    float spacing = ((width - xst) - (90 * ace.length))/ (ace.length + 1);
+    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 120},
+                     {xst + spacing * 2 + 90 * 1 + 45, 120},
+                     {xst + spacing * 3 + 90 * 2 + 45, 120}};
+    int coors = 0;
+    for (Line lin: ace) {
+      lin.display (xys[coors][0], xys[coors][1]);
+      coors ++;
     }
   }
   
@@ -90,61 +82,37 @@ class Menu {
     return bdfm; 
   }
   
-  Line[] G () { 
-    Line[] g = new Line [1]; 
-    g[0] = new Line ("G", color (128,255,0));
-    return g; 
-  }
-  
-  Line[] brownlines () { 
-    Line[] jz = new Line [2]; 
-    jz[0] = new Line ("J", color (160,82,45));
-    jz[1] = new Line ("Z", color (160,82,45));
-    return jz; 
-  }
-  
-  Line[] greylines () { 
-    Line[] ls = new Line [2]; 
-    ls[0] = new Line ("L", color (169,169,169));
-    ls[1] = new Line ("S", color (169,169,169));
-    return ls; 
-  }
-  
-  Line[] redlines () { 
-    Line[] ott = new Line [3]; 
-    ott[0] = new Line ("1", color (255,0,0));
-    ott[1] = new Line ("2", color (255,0,0));
-    ott[2] = new Line ("3", color (255,0,0));
-    return ott; 
-  }
-  
-  Line[] greenlines () { 
-    Line[] ffs = new Line [3]; 
-    ffs[0] = new Line ("4", color (0,255,0));
-    ffs[1] = new Line ("5", color (0,255,0));
-    ffs[2] = new Line ("6", color (0,255,0));
-    return ffs; 
-  }
-  
-  Line seven () { 
-    return new Line ("7", color (204,0,204)); 
+  void displayOrangeLine () { 
+    Line[] ace = orangelines ();
+    float spacing = ((width - xst) - (90 * ace.length))/ (ace.length + 1);
+    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 120},
+                     {xst + spacing * 2 + 90 * 1 + 45, 120},
+                     {xst + spacing * 3 + 90 * 2 + 45, 120}};
+    int coors = 0;
+    for (Line lin: ace) {
+      lin.display (xys[coors][0], xys[coors][1]);
+      coors ++;
+    }
   }
 }
 class Button {
   int type; //0: line, 1: custom line
-  String line;
-  String displ;
-  public Button(int ty, String st) {
+  Line lin; 
+  
+  public Button(int ty, Line l) {
     type = ty;
-    if(type == 0) {
-      line = st;
-      displ = st;
-    }
-    else {
-      line = null;
-      
-    }
+    lin = l;
   }
+  
+  void display (float x, float y) { 
+    noStroke();  
+    fill (lin.lcl); 
+    ellipse (x,y,45,45); 
+    textSize (32); 
+    fill (255); 
+    text (lin.name, x - 10, y + 10); 
+  }
+  
 }
 void newStn(float x, float y, String n) {
   Station stn = new Station(x,y,n);
