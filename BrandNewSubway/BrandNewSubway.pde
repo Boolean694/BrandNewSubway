@@ -26,6 +26,8 @@ class Station {
     circle(x,y,50);
     fill(255);
     circle(x,y,35);
+    fill(50);
+    text(name,x,y - 60);
   }
 }
 class Menu {
@@ -57,6 +59,9 @@ class Button {
     }
   }
 }
+void newStn(float x, float y, String n) {
+  Station stn = new Station(x,y,n);
+}
 void setup() {
   size(1200,800);
   fill(255);
@@ -65,4 +70,5 @@ void draw() {
   background(255);
   Menu me = new Menu();
   me.display();
+  if()
 }
