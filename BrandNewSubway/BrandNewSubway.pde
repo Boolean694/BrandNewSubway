@@ -116,7 +116,7 @@ class Menu {
     return ott; 
   }
   
-  Line[] redlines () { 
+  Line[] greenlines () { 
     Line[] ffs = new Line [3]; 
     ffs[0] = new Line ("4", color (0,255,0));
     ffs[1] = new Line ("5", color (0,255,0));
