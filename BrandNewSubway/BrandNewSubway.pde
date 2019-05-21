@@ -34,7 +34,13 @@ class Station {
     fill(0);
     ellipse (x,y,50,50);
     fill(255);
+<<<<<<< HEAD
+    circle(x,y,35);
+    fill(50);
+    text(name,x,y - 60);
+=======
     ellipse (x,y,35,35);
+>>>>>>> f049df7a0ea7ce3498cda7adf4020f3af9283100
   }
 }
 class Menu {
@@ -143,6 +149,9 @@ class Button {
       
     }
   }
+}
+void newStn(float x, float y, String n) {
+  Station stn = new Station(x,y,n);
 }
 void setup() {
   size(1200,800);
