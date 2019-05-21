@@ -43,8 +43,8 @@ class Menu {
   float xst;
   float wth;
   public Menu() {
-    xst = width * 0.75;
-    wth = width * 0.25;
+    xst = width * 0.65;
+    wth = width * 0.35;
     
   }
   void display() {
