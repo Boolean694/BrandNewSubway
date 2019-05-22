@@ -5,6 +5,7 @@ class Line {
   String name;
   color lcl;
   ArrayList<Station> stations;
+<<<<<<< HEAD
   public Line(String st, color c) {
     lcl = c;
     name = st;
@@ -36,11 +37,21 @@ class Menu {
   float xst;
   float wth;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  ArrayList<Button> btns;
+  public Menu() {
+    xst = width * 0.65;
+    wth = width * 0.35;
+    btns = new ArrayList<Button>();
+=======
+>>>>>>> 61e874bcd4888ec3559ac7bf2fd1c3a5c3c4883f
   ArrayList<Button> buttons; 
   public Menu() {
     xst = width * 0.65;
     wth = width * 0.35;
     buttons = new ArrayList <Button> (); 
+<<<<<<< HEAD
 =======
   ArrayList<Button> btns;
   public Menu() {
@@ -48,6 +59,9 @@ class Menu {
     wth = width * 0.35;
     btns = new ArrayList<Button>();
 >>>>>>> Menu
+=======
+>>>>>>> 46124a6bc07e6e9c006c56c171007d914db4adfb
+>>>>>>> 61e874bcd4888ec3559ac7bf2fd1c3a5c3c4883f
   }
   
   void display() {
@@ -91,6 +105,9 @@ class Menu {
       coors ++;
     }
   }
+<<<<<<< HEAD
+
+=======
   
   Button[] orangelines () { 
     Button[] bdfm = new Button [4]; 
@@ -264,6 +281,7 @@ class Menu {
     float[] xys = {xst + spacing * 1 + 90 * 0 + 45, 680};
     sev.display (xys[0], xys[1]);
   }
+>>>>>>> 46124a6bc07e6e9c006c56c171007d914db4adfb
 }
 
 class Button {
@@ -289,6 +307,11 @@ class Button {
   }
   
 }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> julian
+>>>>>>> 61e874bcd4888ec3559ac7bf2fd1c3a5c3c4883f
 
 void mouseClicked() {
   
