@@ -1,3 +1,5 @@
+ArrayList<Line> lines = new ArrayList<Line>();
+ArrayList<Station> stns = new ArrayList<Station>();
 class Line {
   int order;
   String name;
@@ -33,11 +35,19 @@ class Station {
 class Menu {
   float xst;
   float wth;
+<<<<<<< HEAD
   ArrayList<Button> buttons; 
   public Menu() {
     xst = width * 0.65;
     wth = width * 0.35;
     buttons = new ArrayList <Button> (); 
+=======
+  ArrayList<Button> btns;
+  public Menu() {
+    xst = width * 0.65;
+    wth = width * 0.35;
+    btns = new ArrayList<Button>();
+>>>>>>> Menu
   }
   
   void display() {
@@ -128,6 +138,7 @@ class Menu {
     float spacing = ((width - xst) - (90 * jz.length))/ (jz.length + 1);
     float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 360},
                      {xst + spacing * 2 + 90 * 1 + 45, 360}};
+<<<<<<< HEAD
     int coors = 0;
     for (Button lin: jz) {
       lin.display (xys[coors][0], xys[coors][1]);
@@ -170,10 +181,57 @@ class Menu {
                      {xst + spacing * 3 + 90 * 2 + 45, 520}};
     int coors = 0;
     for (Button lin: ott) {
+=======
+    int coors = 0;
+    for (Button lin: jz) {
+>>>>>>> Menu
       lin.display (xys[coors][0], xys[coors][1]);
       coors ++;
     }
   }
+<<<<<<< HEAD
+=======
+
+  Button[] greylines () { 
+    Button[] ls = new Button [2]; 
+    ls[0] = new Button (new Line ("L", color (169,169,169)));
+    ls[1] = new Button (new Line ("S", color (169,169,169)));
+    return ls; 
+  }
+  
+  void displayGreyLines () { 
+    Button[] ls = greylines ();
+    float spacing = ((width - xst) - (90 * ls.length))/ (ls.length + 1);
+    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 440},
+                     {xst + spacing * 2 + 90 * 1 + 45, 440}};
+    int coors = 0;
+    for (Button lin: ls) {
+      lin.display (xys[coors][0], xys[coors][1]);
+      coors ++;
+    }
+  }
+
+  Button[] redlines () { 
+    Button[] ott = new Button [3]; 
+    ott[0] = new Button (new Line ("1", color (255,0,0)));
+    ott[1] = new Button (new Line ("2", color (255,0,0)));
+    ott[2] = new Button (new Line ("3", color (255,0,0)));
+    return ott; 
+  }
+  
+  void displayRedLines () { 
+    Button[] ott = redlines ();
+    float spacing = ((width - xst) - (90 * ott.length))/ (ott.length + 1);
+    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 520},
+                     {xst + spacing * 2 + 90 * 1 + 45, 520},
+                     {xst + spacing * 3 + 90 * 2 + 45, 520}};
+    int coors = 0;
+    for (Button lin: ott) {
+      lin.display (xys[coors][0], xys[coors][1]);
+      coors ++;
+    }
+  }
+>>>>>>> Menu
   
   Button[] greenlines () { 
     Button[] ffs = new Button [3]; 
@@ -231,12 +289,33 @@ class Button {
   }
   
 }
-void newStn(float x, float y, String n) {
-  Station stn = new Station(x,y,n);
+
+void mouseClicked() {
+  
 }
+
 void setup() {
   size(1200,800);
   fill(255);
+  
+  color orange = color(255,140,0);
+  color red = color(239,52,52);
+  color blue = color(0,0,204);
+  
+  Line B = new Line("B", orange);
+  Line D = new Line("D", orange);
+  Line F = new Line("F", orange);
+  Line M = new Line("M", orange);
+  Line A = new Line("A", blue);
+  Line C = new Line("C", blue);
+  Line E = new Line("E", blue);
+  lines.add(A);
+  lines.add(C);
+  lines.add(E);
+  lines.add(B);
+  lines.add(D);
+  lines.add(F);
+  lines.add(M);
 }
 void draw() {
   background(255);
