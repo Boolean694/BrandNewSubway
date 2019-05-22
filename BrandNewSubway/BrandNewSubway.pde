@@ -33,11 +33,13 @@ class Station {
 class Menu {
   float xst;
   float wth;
+  ArrayList<Button> buttons; 
   public Menu() {
     xst = width * 0.65;
     wth = width * 0.35;
-    
+    buttons = new ArrayList <Button> (); 
   }
+  
   void display() {
     fill(50);
     rect(xst, 0, wth, height);
@@ -50,55 +52,62 @@ class Menu {
     */
     
     displayBlueLines (); 
+    displayOrangeLine (); 
   }
   
-  Line [] bluelines () { 
-    Line[] ace = new Line [3]; 
-    ace[0] = new Line ("A", color(0,0,255)); 
-    ace[1] = new Line ("C", color(0,0,255)); 
-    ace[2] = new Line ("E", color(0,0,255)); 
+  Button[] bluelines () { 
+    Button[] ace = new Line [3]; 
+    ace[0] = new Button (new Line ("A", color(0,0,255))); 
+    ace[1] = new Button (new Line ("C", color(0,0,255))); 
+    ace[2] = new Button (new Line ("E", color(0,0,255))); 
     return ace; 
   }
   
   void displayBlueLines () {
-    Line[] ace = bluelines ();
+    Button[] ace = bluelines ();
     float spacing = ((width - xst) - (90 * ace.length))/ (ace.length + 1);
     float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 120},
                      {xst + spacing * 2 + 90 * 1 + 45, 120},
                      {xst + spacing * 3 + 90 * 2 + 45, 120}};
     int coors = 0;
-    for (Line lin: ace) {
+    for (Button lin: ace) {
       lin.display (xys[coors][0], xys[coors][1]);
       coors ++;
     }
   }
   
-  Line[] orangelines () { 
-    Line[] bdfm = new Line [4]; 
-    bdfm[0] = new Line ("B", color (255,128,0));
-    bdfm[1] = new Line ("D", color (255,128,0));
-    bdfm[2] = new Line ("F", color (255,128,0));
-    bdfm[3] = new Line ("M", color (255,128,0));
+  Button[] orangelines () { 
+    Button[] bdfm = new Line [4]; 
+    bdfm[0] = new Button (new Line ("B", color (255,128,0)));
+    bdfm[1] = new Button (new Line ("D", color (255,128,0)));
+    bdfm[2] = new Button (new Line ("F", color (255,128,0)));
+    bdfm[3] = new Button (new Line ("M", color (255,128,0)));
     return bdfm; 
   }
   
   void displayOrangeLine () { 
-    Line[] bdfm = orangelines ();
+    Button[] bdfm = orangelines ();
     float spacing = ((width - xst) - (90 * bdfm.length))/ (bdfm.length + 1);
-    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 120},
-                     {xst + spacing * 2 + 90 * 1 + 45, 120},
-                     {xst + spacing * 3 + 90 * 2 + 45, 120}};
+    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 200},
+                     {xst + spacing * 2 + 90 * 1 + 45, 200},
+                     {xst + spacing * 3 + 90 * 2 + 45, 200},
+                     {xst + spacing * 4 + 90 * 3 + 45, 200}};
     int coors = 0;
-    for (Line lin: bdfm) {
+    for (Button lin: bdfm) {
       lin.display (xys[coors][0], xys[coors][1]);
       coors ++;
     }
   }
 }
+
 class Button {
   int type; //0: line, 1: custom line
   Line lin; 
   
+  public Button (Line l) { 
+    type = 0; 
+    lin = l; 
+  }
   public Button(int ty, Line l) {
     type = ty;
     lin = l;
