@@ -10,15 +10,6 @@ class Line {
     name = st;
     stations = new ArrayList<Station>();
   }
-  
-  void display (float x, float y) { 
-    stroke (0,0,255); 
-    fill (lcl); 
-    ellipse (x,y,45,45); 
-    textSize (32); 
-    fill (255); 
-    text (name, x - 10, y + 10); 
-  }
 }
 class Station {
   boolean express;
@@ -72,35 +63,38 @@ class Menu {
     return ace; 
   }
   
-  void displayBlueLines () { 
+  void displayBlueLines () {
     Line[] ace = bluelines ();
-    float[][] xys = {{xst + 7.5 * 1 + 90 * 0 + 45, 120},
-                     {xst + 7.5 * 2 + 90 * 1 + 45, 120},
-                     {xst + 7.5 * 3 + 90 * 2 + 45, 120}};
-    int coors = 0; 
-    for (Line lin: ace) { 
-      lin.display (xys[coors][0], xys[coors][1]); 
-      coors ++; 
+    float spacing = ((width - xst) - (90 * ace.length))/ (ace.length + 1);
+    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 120},
+                     {xst + spacing * 2 + 90 * 1 + 45, 120},
+                     {xst + spacing * 3 + 90 * 2 + 45, 120}};
+    int coors = 0;
+    for (Line lin: ace) {
+      lin.display (xys[coors][0], xys[coors][1]);
+      coors ++;
     }
   }
-  
-  
+
 }
 class Button {
   int type; //0: line, 1: custom line
-  String line;
-  String displ;
-  public Button(int ty, String st) {
+  Line lin; 
+  
+  public Button(int ty, Line l) {
     type = ty;
-    if(type == 0) {
-      line = st;
-      displ = st;
-    }
-    else {
-      line = null;
-      
-    }
+    lin = l;
   }
+  
+  void display (float x, float y) { 
+    noStroke();  
+    fill (lin.lcl); 
+    ellipse (x,y,45,45); 
+    textSize (32); 
+    fill (255); 
+    text (lin.name, x - 10, y + 10); 
+  }
+  
 }
 
 void mouseClicked() {
