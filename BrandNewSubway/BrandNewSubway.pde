@@ -1,10 +1,11 @@
 ArrayList<Line> lines = new ArrayList<Line>();
-ArrayList<Station> stns = new ArrayList<Stations>();
+ArrayList<Station> stns = new ArrayList<Station>();
 class Line {
   int order;
   String name;
   color lcl;
   ArrayList<Station> stations;
+<<<<<<< HEAD
   public Line(String st, color c) {
     lcl = c;
     name = st;
@@ -245,6 +246,8 @@ class Button {
   }
   
 }
+=======
+>>>>>>> julian
 
 void mouseClicked() {
   
