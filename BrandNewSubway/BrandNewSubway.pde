@@ -1,5 +1,5 @@
 ArrayList<Line> lines = new ArrayList<Line>();
-ArrayList<Station> stns = new ArrayList<Stations>();
+ArrayList<Station> stns = new ArrayList<Station>();
 class Line {
   int order;
   String name;
@@ -40,13 +40,7 @@ class Menu {
     xst = width * 0.65;
     wth = width * 0.35;
     btns = new ArrayList<Button>();
-  ArrayList<Button> buttons; 
-  public Menu() {
-    xst = width * 0.65;
-    wth = width * 0.35;
-    buttons = new ArrayList <Button> (); 
   }
-  
   void display() {
     fill(50);
     rect(xst, 0, wth, height);
