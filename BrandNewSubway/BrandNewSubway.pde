@@ -1,13 +1,23 @@
 ArrayList<Line> lines = new ArrayList<Line>();
 ArrayList<Station> stns = new ArrayList<Station>();
+Menu menu;
 
 void mouseClicked() {
-  
+  if(mouseX >= width) { //clicked in menu
+    
+  }
+  else { //clicked in map
+    for(int q = 0; q < stns.size(); q++) {
+      if(dist(mouseX, mouseY, stns.get(q).x, stns.get(q).y) <= 25) { //clicked on stn
+        
+      }
+    }
+  }
 }
 
 void setup() {
   size(1200,800);
-  fill(255);
+  fill(255);  
   
   color orange = color(255,140,0);
   color red = color(239,52,52);
@@ -27,6 +37,8 @@ void setup() {
   lines.add(D);
   lines.add(F);
   lines.add(M);
+  
+  menu = new Menu(lines);
 }
 void draw() {
   background(255);
