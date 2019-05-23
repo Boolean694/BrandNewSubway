@@ -35,19 +35,11 @@ class Station {
 class Menu {
   float xst;
   float wth;
-<<<<<<< HEAD
-  ArrayList<Button> btns;
-  public Menu() {
-    xst = width * 0.65;
-    wth = width * 0.35;
-    btns = new ArrayList<Button>();
-=======
   ArrayList<Button> buttons; 
   public Menu() {
     xst = width * 0.65;
     wth = width * 0.35;
     buttons = new ArrayList <Button> (); 
->>>>>>> 46124a6bc07e6e9c006c56c171007d914db4adfb
   }
   
   void display() {
@@ -91,135 +83,6 @@ class Menu {
       coors ++;
     }
   }
-<<<<<<< HEAD
-
-=======
-  
-  Button[] orangelines () { 
-    Button[] bdfm = new Button [4]; 
-    bdfm[0] = new Button (new Line ("B", color (255,128,0)));
-    bdfm[1] = new Button (new Line ("D", color (255,128,0)));
-    bdfm[2] = new Button (new Line ("F", color (255,128,0)));
-    bdfm[3] = new Button (new Line ("M", color (255,128,0)));
-    return bdfm; 
-  }
-  
-  void displayOrangeLines () { 
-    Button[] bdfm = orangelines ();
-    float spacing = ((width - xst) - (90 * bdfm.length))/ (bdfm.length + 1);
-    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 200},
-                     {xst + spacing * 2 + 90 * 1 + 45, 200},
-                     {xst + spacing * 3 + 90 * 2 + 45, 200},
-                     {xst + spacing * 4 + 90 * 3 + 45, 200}};
-    int coors = 0;
-    for (Button lin: bdfm) {
-      lin.display (xys[coors][0], xys[coors][1]);
-      coors ++;
-    }
-  }
-  
-  Button G () { 
-    return new Button (new Line ("G", color (128,255,0))); 
-  }
-  
-  void displayGLine () { 
-    Button ge = G();
-    float spacing = ((width - xst) - (90))/ (2);
-    float[] xys = {xst + spacing * 1 + 90 * 0 + 45, 280};
-    ge.display (xys[0], xys[1]);
-  }
-
-  Button[] brownlines () { 
-    Button[] jz = new Button [2]; 
-    jz[0] = new Button (new Line ("J", color (160,82,45)));
-    jz[1] = new Button (new Line ("Z", color (160,82,45)));
-    return jz; 
-  }
-  
-  void displayBrownLines () { 
-    Button[] jz = brownlines ();
-    float spacing = ((width - xst) - (90 * jz.length))/ (jz.length + 1);
-    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 360},
-                     {xst + spacing * 2 + 90 * 1 + 45, 360}};
-    int coors = 0;
-    for (Button lin: jz) {
-      lin.display (xys[coors][0], xys[coors][1]);
-      coors ++;
-    }
-  }
-
-  Button[] greylines () { 
-    Button[] ls = new Button [2]; 
-    ls[0] = new Button (new Line ("L", color (169,169,169)));
-    ls[1] = new Button (new Line ("S", color (169,169,169)));
-    return ls; 
-  }
-  
-  void displayGreyLines () { 
-    Button[] ls = greylines ();
-    float spacing = ((width - xst) - (90 * ls.length))/ (ls.length + 1);
-    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 440},
-                     {xst + spacing * 2 + 90 * 1 + 45, 440}};
-    int coors = 0;
-    for (Button lin: ls) {
-      lin.display (xys[coors][0], xys[coors][1]);
-      coors ++;
-    }
-  }
-
-  Button[] redlines () { 
-    Button[] ott = new Button [3]; 
-    ott[0] = new Button (new Line ("1", color (255,0,0)));
-    ott[1] = new Button (new Line ("2", color (255,0,0)));
-    ott[2] = new Button (new Line ("3", color (255,0,0)));
-    return ott; 
-  }
-  
-  void displayRedLines () { 
-    Button[] ott = redlines ();
-    float spacing = ((width - xst) - (90 * ott.length))/ (ott.length + 1);
-    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 520},
-                     {xst + spacing * 2 + 90 * 1 + 45, 520},
-                     {xst + spacing * 3 + 90 * 2 + 45, 520}};
-    int coors = 0;
-    for (Button lin: ott) {
-      lin.display (xys[coors][0], xys[coors][1]);
-      coors ++;
-    }
-  }
-  
-  Button[] greenlines () { 
-    Button[] ffs = new Button [3]; 
-    ffs[0] = new Button (new Line ("4", color (0,128,0)));
-    ffs[1] = new Button (new Line ("5", color (0,128,0)));
-    ffs[2] = new Button (new Line ("6", color (0,128,0)));
-    return ffs; 
-  }
-  
-  void displayGreenLines () { 
-    Button[] ffs = greenlines ();
-    float spacing = ((width - xst) - (90 * ffs.length))/ (ffs.length + 1);
-    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 600},
-                     {xst + spacing * 2 + 90 * 1 + 45, 600},
-                     {xst + spacing * 3 + 90 * 2 + 45, 600}};
-    int coors = 0;
-    for (Button lin: ffs) {
-      lin.display (xys[coors][0], xys[coors][1]);
-      coors ++;
-    }
-  }
-
-  Button seven () { 
-    return new Button (new Line ("7", color (204,0,204))); 
-  }
-  
-  void displaySevenLine () { 
-    Button sev = seven();
-    float spacing = ((width - xst) - (90))/ (2);
-    float[] xys = {xst + spacing * 1 + 90 * 0 + 45, 680};
-    sev.display (xys[0], xys[1]);
-  }
->>>>>>> 46124a6bc07e6e9c006c56c171007d914db4adfb
 }
 
 class Button {
