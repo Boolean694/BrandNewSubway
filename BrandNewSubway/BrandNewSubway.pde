@@ -1,13 +1,10 @@
 ArrayList<Line> lines = new ArrayList<Line>();
-ArrayList<Station> stns = new ArrayList<Station>();
-<<<<<<< HEAD
-=======
+ArrayList<Station> stns = new ArrayList<Stations>();
 class Line {
   int order;
   String name;
   color lcl;
   ArrayList<Station> stations;
-<<<<<<< HEAD
   public Line(String st, color c) {
     lcl = c;
     name = st;
@@ -39,31 +36,18 @@ class Menu {
   float xst;
   float wth;
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
   ArrayList<Button> btns;
   public Menu() {
     xst = width * 0.65;
     wth = width * 0.35;
     btns = new ArrayList<Button>();
 =======
->>>>>>> 61e874bcd4888ec3559ac7bf2fd1c3a5c3c4883f
   ArrayList<Button> buttons; 
   public Menu() {
     xst = width * 0.65;
     wth = width * 0.35;
     buttons = new ArrayList <Button> (); 
-<<<<<<< HEAD
-=======
-  ArrayList<Button> btns;
-  public Menu() {
-    xst = width * 0.65;
-    wth = width * 0.35;
-    btns = new ArrayList<Button>();
->>>>>>> Menu
-=======
 >>>>>>> 46124a6bc07e6e9c006c56c171007d914db4adfb
->>>>>>> 61e874bcd4888ec3559ac7bf2fd1c3a5c3c4883f
   }
   
   void display() {
@@ -157,7 +141,6 @@ class Menu {
     float spacing = ((width - xst) - (90 * jz.length))/ (jz.length + 1);
     float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 360},
                      {xst + spacing * 2 + 90 * 1 + 45, 360}};
-<<<<<<< HEAD
     int coors = 0;
     for (Button lin: jz) {
       lin.display (xys[coors][0], xys[coors][1]);
@@ -200,57 +183,10 @@ class Menu {
                      {xst + spacing * 3 + 90 * 2 + 45, 520}};
     int coors = 0;
     for (Button lin: ott) {
-=======
-    int coors = 0;
-    for (Button lin: jz) {
->>>>>>> Menu
       lin.display (xys[coors][0], xys[coors][1]);
       coors ++;
     }
   }
-<<<<<<< HEAD
-=======
-
-  Button[] greylines () { 
-    Button[] ls = new Button [2]; 
-    ls[0] = new Button (new Line ("L", color (169,169,169)));
-    ls[1] = new Button (new Line ("S", color (169,169,169)));
-    return ls; 
-  }
-  
-  void displayGreyLines () { 
-    Button[] ls = greylines ();
-    float spacing = ((width - xst) - (90 * ls.length))/ (ls.length + 1);
-    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 440},
-                     {xst + spacing * 2 + 90 * 1 + 45, 440}};
-    int coors = 0;
-    for (Button lin: ls) {
-      lin.display (xys[coors][0], xys[coors][1]);
-      coors ++;
-    }
-  }
-
-  Button[] redlines () { 
-    Button[] ott = new Button [3]; 
-    ott[0] = new Button (new Line ("1", color (255,0,0)));
-    ott[1] = new Button (new Line ("2", color (255,0,0)));
-    ott[2] = new Button (new Line ("3", color (255,0,0)));
-    return ott; 
-  }
-  
-  void displayRedLines () { 
-    Button[] ott = redlines ();
-    float spacing = ((width - xst) - (90 * ott.length))/ (ott.length + 1);
-    float[][] xys = {{xst + spacing * 1 + 90 * 0 + 45, 520},
-                     {xst + spacing * 2 + 90 * 1 + 45, 520},
-                     {xst + spacing * 3 + 90 * 2 + 45, 520}};
-    int coors = 0;
-    for (Button lin: ott) {
-      lin.display (xys[coors][0], xys[coors][1]);
-      coors ++;
-    }
-  }
->>>>>>> Menu
   
   Button[] greenlines () { 
     Button[] ffs = new Button [3]; 
@@ -309,12 +245,6 @@ class Button {
   }
   
 }
-<<<<<<< HEAD
-=======
-=======
->>>>>>> julian
->>>>>>> 61e874bcd4888ec3559ac7bf2fd1c3a5c3c4883f
->>>>>>> c81235500596465e680144b979019952c8288752
 
 void mouseClicked() {
   
