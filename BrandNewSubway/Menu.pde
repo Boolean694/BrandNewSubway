@@ -21,8 +21,8 @@ class Menu {
     fill (255);
     text ("Brand New", (xst + width)/2, 100);
     text ("Subway", (xst + width)/2, 150);
-    for(int q = 0; q < buttons.size(); q++) {
-      
+    for(int q = 0; q < buttons.size(); q++) { //start displaying buttons at y=200
+      buttons.get(q).display(xst + (((float)q % 4.0 + 1.0)/5.0)*width,250 + ((q / 4)*100));
     }
   }
 }
