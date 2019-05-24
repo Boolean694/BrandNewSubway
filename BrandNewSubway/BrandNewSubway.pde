@@ -9,8 +9,10 @@ void mouseClicked() {
     for (Button b : menu.buttons) { 
       if (dist (mouseX, mouseY, b.x, b.y) < 45) { 
         currentToggle = b.lin;
-      }
+        buttonToggled = true; 
+      } 
     }
+     buttonToggled = false;
   } else { //clicked in map
     int stnnum = 0;
     boolean useless = false; //by the end of for loop is true if clicked on station, false if not
