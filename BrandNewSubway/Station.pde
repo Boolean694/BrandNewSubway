@@ -18,4 +18,7 @@ class Station {
     fill(50);
     text(name,x,y - 60);
   }
+  void clickedOn() {//displays station info when clicked on
+    
+  }
 }

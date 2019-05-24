@@ -1,16 +1,24 @@
-ArrayList<Line> lines = new ArrayList<Line>();
-ArrayList<Station> stns = new ArrayList<Station>();
+ArrayList<Line> lines;
+ArrayList<Station> stns;
 Menu menu;
+boolean buttonToggled;
 
 void mouseClicked() {
   if(mouseX >= width) { //clicked in menu
     
   }
   else { //clicked in map
+    int stnnum = 0;
+    boolean useless = false;
     for(int q = 0; q < stns.size(); q++) {
       if(dist(mouseX, mouseY, stns.get(q).x, stns.get(q).y) <= 25) { //clicked on stn
-        
+        stnnum = q;
+        useless = true;
+        break;
       }
+    }
+    if(useless) {
+      stns.get(stnnum).clickedOn();
     }
   }
 }
@@ -18,6 +26,10 @@ void mouseClicked() {
 void setup() {
   size(1200,800);
   fill(255);  
+  
+  stns = new ArrayList<Station>();
+  lines = new ArrayList<Line>();
+  buttonToggled = false;
   
   color orange = color(255,140,0);
   color red = color(239,52,52);
@@ -42,6 +54,5 @@ void setup() {
 }
 void draw() {
   background(255);
-  Menu me = new Menu();
-  me.display(); 
+  menu.display();
 }
