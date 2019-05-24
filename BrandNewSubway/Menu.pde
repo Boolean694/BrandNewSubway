@@ -14,7 +14,8 @@ class Menu {
   void display() {
     fill(50);
     rect(xst, 0, wth, height);
-    PFont font = loadFont ("AnjaliOldLipi-56.vlw");
+    //PFont font = loadFont ("AnjaliOldLipi-56.vlw");
+    PFont font = loadFont ("MicrosoftYaHeiUI-56.vlw"); 
     textFont (font); 
     textAlign (CENTER, BOTTOM);
     fill (255);
