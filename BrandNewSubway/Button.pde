@@ -15,9 +15,10 @@ class Button {
     noStroke();  
     fill (lin.lcl); 
     ellipse (x,y,45,45); 
-    textSize (32); 
+    PFont font = loadFont ("Arial-BoldMT-32.vlw"); 
+    textFont (font); 
     fill (255); 
-    text (lin.name, x - 10, y + 10); 
+    text (lin.name, x , y + 17); 
   }
   
 }
