@@ -12,14 +12,18 @@ class Menu {
                         {new Button (new Line ("1", red)), new Button (new Line ("2", red)), new Button (new Line ("3", red)), new Button (new Line ("4", green))}, 
                         {new Button (new Line ("5", green)), new Button (new Line ("6", green)), new Button (new Line ("7", purple))}
                        }; 
-  
+  ArrayList <Line> selectedLines; 
+  /*
   public Menu() {
     xst = width * 0.65;
     wth = width * 0.35;
     //buttons = new ArrayList <Button> (); 
   }
-  
+  */
   public Menu (ArrayList<Line> l) { 
+    xst = width * 0.65;
+    wth = width * 0.35;
+    selectedLines = l; 
   }
   
   void display() {
@@ -32,14 +36,12 @@ class Menu {
     fill (255);
     text ("Brand New", (xst + width)/2, 100);
     text ("Subway", (xst + width)/2, 160);
-    line (xst, 150, width, 150); 
-    displayLines (); 
-    line (xst, height - 75, width, height - 75); 
-    
+    //line (xst, 150, width, 150); 
+    displayLines ();  
   }
   
   void displayLines () {
-    float spacing = ((width - xst) - 4 * 90)/5;
+    //float spacing = ((width - xst) - 4 * 90)/5;
     float[] xs = {837,939,1041,1143}; 
     float[] ys = {207,309,411,513,615}; 
     int row = 0; 
@@ -50,4 +52,13 @@ class Menu {
       row ++; 
     }
   }
+  
+  void addLine (Line l) { 
+    selectedLines.add (l); 
+  }
+  
+  void removeLine () { //removes last added line
+    selectedLines.remove(selectedLines.size () - 1); 
+  }
+  
 }
