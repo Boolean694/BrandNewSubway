@@ -2,9 +2,10 @@ ArrayList<Line> lines;
 ArrayList<Station> stns;
 Menu menu;
 boolean buttonToggled;
+Line currentToggle;
 
 void mouseClicked() {
-  if(mouseX >= width) { //clicked in menu
+  if(mouseX >= width * 0.65) { //clicked in menu
     
   }
   else { //clicked in map
@@ -19,6 +20,12 @@ void mouseClicked() {
     }
     if(useless) {
       stns.get(stnnum).clickedOn();
+    }
+    else {
+      if(buttonToggled) {
+        Station stn = new Station(mouseX, mouseY);//set this up with currentToggle line, update constructor
+        
+      }
     }
   }
 }
