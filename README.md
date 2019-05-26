@@ -14,10 +14,10 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 #### 22.05 
 - We both spent the entire period trying to fix merge conflicts. We needed Mr. K's help because we were getting lots of error messages.
 
-#### 24.05 
+#### 23.05 
 - Julian: Started writing mouse commands and processing clicks. 
 - Maisha: Finished working on displaying the buttons on the menu. Added a new constructor to the Menu class which takes an ArrayList of Lines. 
 
-#### 25.05
-- Julian: 
+#### 24.05
+- Julian: Restructured code that displays menu buttons, to make sure it works regardless of where the program is in the game. Eliminates redundancies in code.
 - Maisha: Started writing code for mouseclicked. Needs to be tested. 
