@@ -22,5 +22,6 @@ class Button {
     text (lin.name, ix, iy + 17);
     x = ix;
     y = iy;
+    stroke (); 
   }
 }
