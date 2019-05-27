@@ -64,5 +64,10 @@ void setup() {
 }
 void draw() {
   background(255);
+  
+  PImage map = loadImage ("subwaymap.PNG"); 
+  map.resize (780, height); 
+  image (map, 0,0); 
+  
   menu.display();
 }
