@@ -16,7 +16,7 @@ class Menu {
   }
   void dispButtons() {
     for(int q = 0; q < buttons.size(); q++) { //start displaying buttons at y=200
-      buttons.get(q).display(xst + (((float)q % 4.0 + 1.0)/5.0)*xst/2,250 + ((q / 4)*100));
+      buttons.get(q).display(xst + (((float)q % 4.0 + 1.0)/5.0)*xst/2,200 + ((q / 4)*100));
     }
   }
   void menuSetup() {

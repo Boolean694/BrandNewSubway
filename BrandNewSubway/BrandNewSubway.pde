@@ -52,6 +52,9 @@ void setup() {
   Line A = new Line("A", blue);
   Line C = new Line("C", blue);
   Line E = new Line("E", blue);
+  Line one = new Line("1", red);
+  Line two = new Line("2", red);
+  Line three = new Line("3", red);
   lines.add(A);
   lines.add(C);
   lines.add(E);
@@ -59,6 +62,9 @@ void setup() {
   lines.add(D);
   lines.add(F);
   lines.add(M);
+  lines.add(one);
+  lines.add(two);
+  lines.add(three);
 
 
   menu = new Menu(lines);
