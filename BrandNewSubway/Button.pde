@@ -21,6 +21,6 @@ class Button {
     fill (255); 
     text (lin.name, ix, iy + 17);
     x = ix;
-    y = iy;
+    y = iy; 
   }
 }
