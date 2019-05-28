@@ -15,7 +15,7 @@ class Button {
   void display (float ix, float iy) { 
     noStroke();  
     fill (lin.lcl); 
-    ellipse (x, y, 45, 45); 
+    ellipse (ix, iy, 45, 45); 
     PFont font = loadFont ("Arial-BoldMT-32.vlw"); 
     textFont (font); 
     fill (255); 
