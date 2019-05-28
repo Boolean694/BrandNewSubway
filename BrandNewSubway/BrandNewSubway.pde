@@ -35,7 +35,7 @@ void mouseClicked() {
 
 void setup() {
   size(1200, 800);
-  fill(255);  
+  fill(255);
 
   stns = new ArrayList<Station>();
   lines = new ArrayList<Line>();
@@ -60,10 +60,10 @@ void setup() {
   lines.add(F);
   lines.add(M);
 
+
   menu = new Menu(lines);
 }
 void draw() {
-  background(255);
   
   PImage map = loadImage ("subwaymap.PNG"); 
   map.resize (780, height); 
