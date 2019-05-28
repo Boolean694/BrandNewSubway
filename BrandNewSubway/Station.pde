@@ -39,7 +39,7 @@ class Station {
     //write code for displaying the lines at a station 
     /*
     Line a = new Line ("3", color (255,0,0));
-    a.display (width / 2 - 60, height / 2 - 35);
+    a.stationdisplay (width / 2 - 60, height / 2 - 35);
     */
   }
 }
