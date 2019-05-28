@@ -23,7 +23,9 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 - Maisha: Started writing code for mouseclicked. Needs to be tested. 
 
 #### 26.05
+- Julian: Tried troubleshooting the button displays because that wasn't working.
 - Maisha: Tested to see if clicking on a button is stored as a variable. Tried to figure out other button functionality on paper. 
 
 #### 27.05
+- Julian: Restructured menu and button display code so that it only gets displayed if buttons was updated.
 - Maisha: Worked on writing the display for when a station is clicked on. 
