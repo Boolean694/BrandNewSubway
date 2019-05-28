@@ -11,7 +11,11 @@ class Menu {
       println(buttons.get(stln).lin.name);
     }
   }
-
+  void dispButtons() {
+    for(int q = 0; q < buttons.size(); q++) { //start displaying buttons at y=200
+      buttons.get(q).display(xst + (((float)q % 4.0 + 1.0)/5.0)*width,250 + ((q / 4)*100));
+    }
+  }
   void display() {
     fill(50);
     rect(xst, 0, wth, height);
