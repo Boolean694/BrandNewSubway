@@ -29,3 +29,7 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 #### 27.05
 - Julian: Restructured menu and button display code so that it only gets displayed if buttons was updated.
 - Maisha: Worked on writing the display for when a station is clicked on. 
+
+#### 28.05 
+- Julian: 
+- Maisha: Worked on writing code to draw a line between stations, needs to be tested. 
