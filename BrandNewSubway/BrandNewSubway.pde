@@ -28,6 +28,7 @@ void mouseClicked() {
     } else {
       if (buttonToggled) {
         Station stn = new Station(mouseX, mouseY);//set this up with currentToggle line, update constructor
+        currentToggle = 
       }
     }
   }

@@ -14,12 +14,15 @@ class Station {
     x = ix;
     y = iy;
     lines = new ArrayList<Line>();
+    name = ""; 
   }
   void display() {
+    stroke (0); 
     fill(0);
-    ellipse (x, y, 50, 50);
+    ellipse (x, y, 25, 25);
+    stroke (255); 
     fill(255);
-    ellipse(x, y, 35, 35);
+    ellipse(x, y, 35/2, 35/2);
     fill(50);
     text(name, x, y - 60);
   }
