@@ -10,9 +10,10 @@ void mouseClicked() {
       if (dist (mouseX, mouseY, b.x, b.y) < 45) { 
         currentToggle = b.lin;
         buttonToggled = true; 
+        println (currentToggle.name); 
       } 
     }
-     buttonToggled = false;
+    buttonToggled = false;
   } else { //clicked in map
     int stnnum = 0;
     boolean useless = false; //by the end of for loop is true if clicked on station, false if not
@@ -31,6 +32,20 @@ void mouseClicked() {
       }
     }
   }
+  placeStation (); 
+}
+
+void placeStation () { 
+  if (mouseX < width * .65) { 
+    int xcor = mouseX; 
+    int ycor = mouseY;
+    Station adding = new Station (xcor, ycor); 
+    adding.lines.add (currentToggle); 
+    adding.display (); 
+    stns.add (adding); 
+    println ("worked, added a station"); 
+  }
+  println ("didn't work"); 
 }
 
 void setup() {
