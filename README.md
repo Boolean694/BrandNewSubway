@@ -32,4 +32,4 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 
 #### 28.05 
 - Julian: 
-- Maisha: Worked on writing code to draw a line between stations, needs to be tested. 
+- Maisha: Worked on writing code to draw a line between stations, needs to be tested. Figured out how to place a station on the map. 
