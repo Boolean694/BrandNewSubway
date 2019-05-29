@@ -41,11 +41,8 @@ void placeStation () {
     int ycor = mouseY;
     Station adding = new Station (xcor, ycor); 
     adding.lines.add (currentToggle); 
-    adding.display (); 
     stns.add (adding); 
-    println ("worked, added a station"); 
   }
-  println ("didn't work"); 
 }
 
 void setup() {
@@ -91,4 +88,8 @@ void draw() {
   image (map, 0,0); 
   
   menu.display();
+  
+  for (int i = 0; i < stns.size (); i ++) { 
+    stns.get (i).display (); 
+  }
 }
