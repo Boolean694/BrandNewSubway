@@ -31,5 +31,5 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 - Maisha: Worked on writing the display for when a station is clicked on. 
 
 #### 28.05 
-- Julian: 
+- Julian: Wrote some more mouseclicked code.
 - Maisha: Wrote code to draw a line between stations and figured our how to place a station on the map.  
