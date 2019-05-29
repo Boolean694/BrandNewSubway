@@ -40,6 +40,7 @@ void placeStation () {
     int xcor = mouseX; 
     int ycor = mouseY;
     Station adding = new Station (xcor, ycor); 
+    currentToggle.stations.add (adding); 
     adding.lines.add (currentToggle); 
     stns.add (adding); 
   }
@@ -90,6 +91,10 @@ void draw() {
   menu.display();
   
   for (int i = 0; i < stns.size (); i ++) { 
-    stns.get (i).display (); 
+    stns.get(i).display (); 
+  }
+  
+  for (int i = 0; i < lines.size (); i ++) { 
+    lines.get(i).drawLine (); 
   }
 }

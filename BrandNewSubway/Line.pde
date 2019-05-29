@@ -26,11 +26,12 @@ class Line {
   }
   
   
-  void drawLine () {
-    strokeWeight (4); 
-    stroke (lcl); 
+  void drawLine () { 
     for (int i = 0; i < stations.size() - 1; i ++) { 
+      strokeWeight (4); 
+      stroke (lcl);
       line (stations.get (i).x, stations.get(i).y, stations.get (i + 1).x, stations.get (i + 1).y); 
     }
+    //stroke (0); 
   }
 }
