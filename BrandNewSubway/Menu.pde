@@ -9,6 +9,7 @@ class Menu {
     buttons = new ArrayList <Button> (); //there should be a different system for non-line buttons
     for (int stln = 0; stln < li.size(); stln++) {//fills buttons arraylist
       buttons.add(new Button(li.get(stln)));
+      //println(buttons.get(stln).lin.name);
     }
     buttonAdded = true;
     menuSetup();
