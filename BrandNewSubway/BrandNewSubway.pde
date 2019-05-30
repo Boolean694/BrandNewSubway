@@ -122,13 +122,14 @@ void draw() {
   
   menu.display();
   
-  for (int i = 0; i < stns.size (); i ++) { 
-    stns.get(i).display(); 
-  }
-  
   for (int i = 0; i < lines.size (); i ++) { 
     lines.get(i).drawLine (); 
   }
+  
+  for (int i = 0; i < stns.size (); i ++) { 
+    stns.get(i).display(); 
+  }
+ 
   if(updatebu) {
     menu.dispButtons();
     updatebu = false;
