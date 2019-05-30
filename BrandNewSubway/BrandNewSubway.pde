@@ -73,6 +73,8 @@ void setup() {
   color orange = color(255, 140, 0);
   color red = color(239, 52, 52);
   color blue = color(0, 0, 204);
+  color dgreen = color(34,139,34);
+  color yellow = color(255,255,0);
 
   Line B = new Line("B", orange);
   Line D = new Line("D", orange);
@@ -84,6 +86,13 @@ void setup() {
   Line one = new Line("1", red);
   Line two = new Line("2", red);
   Line three = new Line("3", red);
+  Line four = new Line("4", dgreen);
+  Line five = new Line("5", dgreen);
+  Line six = new Line("6", dgreen);
+  Line N = new Line("N",yellow);
+  Line Q = new Line("Q",yellow);
+  Line R = new Line("R",yellow);
+  Line W = new Line("W",yellow);
   lines.add(A);
   lines.add(C);
   lines.add(E);
@@ -94,6 +103,13 @@ void setup() {
   lines.add(one);
   lines.add(two);
   lines.add(three);
+  lines.add(four);
+  lines.add(five);
+  lines.add(six);
+  lines.add(N);
+  lines.add(Q);
+  lines.add(R);
+  lines.add(W);
 
 
   menu = new Menu(lines);
