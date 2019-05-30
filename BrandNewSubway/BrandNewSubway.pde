@@ -3,17 +3,25 @@ ArrayList<Station> stns;
 Menu menu;
 boolean buttonToggled;
 Line currentToggle;
+Button ctog;
+boolean updatebu = false;
 
 void mouseClicked() {
   if (mouseX >= width * 0.65) { //clicked in menu
     for (Button b : menu.buttons) { 
       if (dist (mouseX, mouseY, b.x, b.y) < 45) { 
+        if(ctog != null){ctog.tog = false;}
+        ctog = b;
         currentToggle = b.lin;
         buttonToggled = true; 
+        updatebu = true;
         println (currentToggle.name); 
+        break;
       } 
     }
     buttonToggled = false;
+    ctog = null;
+    currentToggle = null;
   } else { //clicked in map
     int stnnum = 0;
     boolean useless = false; //by the end of for loop is true if clicked on station, false if not
@@ -29,6 +37,14 @@ void mouseClicked() {
     } else {
       if (buttonToggled) {
         Station stn = new Station(mouseX, mouseY);//set this up with currentToggle line, update constructor
+        int curs = 2147483647;
+        int ind = 0;
+        for(Station s : currentToggle.stations) {//gets closest stn in selected line
+          if((int)dist(stn.x,stn.y,s.x,s.y) < curs) {
+            curs = (int)dist(stn.x,stn.y,s.x,s.y);
+            ind = currentToggle.stations.indexOf(s);
+          }
+        }
       }
     }
   }
@@ -96,5 +112,9 @@ void draw() {
   
   for (int i = 0; i < lines.size (); i ++) { 
     lines.get(i).drawLine (); 
+  }
+  if(updatebu) {
+    menu.dispButtons();
+    updatebu = false;
   }
 }
