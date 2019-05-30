@@ -4,6 +4,8 @@ class Station {
   float x;
   float y;
   String name;
+  boolean selected; 
+  
   public Station(float ix, float iy, String nam) {
     x = ix;
     y = iy;
@@ -14,17 +16,17 @@ class Station {
     x = ix;
     y = iy;
     lines = new ArrayList<Line>();
-    name = ""; 
+    name = "Station"; 
   }
   void display() {
-    stroke (0); 
-    fill(0);
-    ellipse (x, y, 25, 25);
     stroke (255); 
     fill(255);
-    ellipse(x, y, 35/2, 35/2);
+    ellipse (x, y, 25/2, 25/2);
+    stroke (0); 
+    fill(0);
+    ellipse(x, y, 35/4, 35/4);
     fill(50);
-    text(name, x, y - 60);
+    //text(name, x, y - 60);
   }
   void setName(String n) {
     name = n;
