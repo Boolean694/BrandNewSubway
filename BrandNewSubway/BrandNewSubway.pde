@@ -19,10 +19,10 @@ void mouseClicked() {
         break;
       } 
     }
-    buttonToggled = false;
-    ctog = null;
-    currentToggle = null;
-  } else { //clicked in map
+    
+  } 
+  
+  else { //clicked in map
     int stnnum = 0;
     boolean useless = false; //by the end of for loop is true if clicked on station, false if not
     for (int q = 0; q < stns.size(); q++) {
@@ -32,9 +32,9 @@ void mouseClicked() {
         break;
       }
     }
-    if (useless) {
+    if (useless) {//click on station
       stns.get(stnnum).clickedOn();
-    } else {
+    } else {//not click on station
       if (buttonToggled) {
         Station stn = new Station(mouseX, mouseY);//set this up with currentToggle line, update constructor
         int curs = 2147483647;
@@ -52,7 +52,7 @@ void mouseClicked() {
 }
 
 void placeStation () { 
-  if (mouseX < width * .65) { 
+  if (mouseX < width * .65 && buttonToggled) { 
     int xcor = mouseX; 
     int ycor = mouseY;
     Station adding = new Station (xcor, ycor); 
@@ -107,7 +107,7 @@ void draw() {
   menu.display();
   
   for (int i = 0; i < stns.size (); i ++) { 
-    stns.get(i).display (); 
+    stns.get(i).display(); 
   }
   
   for (int i = 0; i < lines.size (); i ++) { 
