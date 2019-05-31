@@ -17,13 +17,8 @@ class Line {
     PFont font = loadFont ("Arial-BoldMT-32.vlw"); 
     textFont (font); 
     textSize (22); 
-    if (name.equals ("N") || name.equals ("Q") || name.equals ("R") || name.equals ("W")) { 
-      fill (0); 
-    }
-    else { 
-      fill (255);
-    }
-    text (name, ix + 6, iy + 8);
+    fill (255); 
+    text (name, ix + 7, iy + 8);
     /*
     x = ix;
     y = iy; 

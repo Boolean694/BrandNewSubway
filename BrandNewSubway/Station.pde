@@ -49,6 +49,12 @@ class Station {
       stroke (255); 
       textAlign (RIGHT);
       text (name, x + 30, y - 75); 
+      
+      float xcor = x - 80 + 20; 
+      for (Line l: lines) { 
+        l.stationdisplay (xcor, y - 112 +100 - 20); 
+        xcor += 55; 
+      }
       //write code for displaying the lines at a station 
       /*
             Line a = new Line ("3", color (255,0,0));
