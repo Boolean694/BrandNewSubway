@@ -33,8 +33,11 @@ void mouseClicked() {
       }
     }
     
+    placeStation (); 
+    
     if (useless) {//click on station
-      stns.get(stnnum).clickedOn();
+      stns.get(stnnum).selected = true;
+      //stns.get(stnnum).clickedOn();
     } else {//not click on station
       if (buttonToggled) {
         Station stn = new Station(mouseX, mouseY);//set this up with currentToggle line, update constructor
@@ -49,7 +52,6 @@ void mouseClicked() {
       }
     }
   }
-  placeStation (); 
 }
 
 void placeStation () { 
@@ -66,7 +68,7 @@ void placeStation () {
 void setup() {
   size(1200, 800);
   fill(255);
-
+  
   stns = new ArrayList<Station>();
   lines = new ArrayList<Line>();
   buttonToggled = false;
@@ -123,12 +125,13 @@ void draw() {
   
   menu.display();
   
-  for (int i = 0; i < lines.size (); i ++) { 
-    lines.get(i).drawLine (); 
+  for (Line l : lines) { 
+    l.drawLine (); 
   }
   
-  for (int i = 0; i < stns.size (); i ++) { 
-    stns.get(i).display();
+  for (Station s: stns) { 
+    s.display (); 
+    s.clickedOn (); 
   }
  
   if(updatebu) {

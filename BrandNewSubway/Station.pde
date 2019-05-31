@@ -34,7 +34,7 @@ class Station {
     name = n;
   }
   void clickedOn() {//displays station info when clicked on    
-    //if (selected) { 
+    if (selected) { 
       fill (0); 
       triangle (x, y, x - 8, y- 12, x +8, y-12); 
       rect (x - 80, y-112, 160, 100); 
@@ -50,6 +50,6 @@ class Station {
             Line a = new Line ("3", color (255,0,0));
        a.stationdisplay (width / 2 - 60, height / 2 - 35);
        */
-    //}
+    }
   }
 }
