@@ -26,12 +26,13 @@ void mouseClicked() {
     int stnnum = 0;
     boolean useless = false; //by the end of for loop is true if clicked on station, false if not
     for (int q = 0; q < stns.size(); q++) {
-      if (dist(mouseX, mouseY, stns.get(q).x, stns.get(q).y) <= 25) { //clicked on stn
+      if (dist(mouseX, mouseY, stns.get(q).x, stns.get(q).y) <= 25/2) { //clicked on stn
         stnnum = q;
         useless = true;
         break;
       }
     }
+    
     if (useless) {//click on station
       stns.get(stnnum).clickedOn();
     } else {//not click on station
@@ -52,7 +53,7 @@ void mouseClicked() {
 }
 
 void placeStation () { 
-  if (mouseX < width * .65 && buttonToggled) { 
+  if (mouseX < width * .65 && buttonToggled && get (mouseX, mouseY) != -6174228) { //if a line is selected and mouseX and mouseY is not over water 
     int xcor = mouseX; 
     int ycor = mouseY;
     Station adding = new Station (xcor, ycor); 
@@ -127,7 +128,7 @@ void draw() {
   }
   
   for (int i = 0; i < stns.size (); i ++) { 
-    stns.get(i).display(); 
+    stns.get(i).display();
   }
  
   if(updatebu) {

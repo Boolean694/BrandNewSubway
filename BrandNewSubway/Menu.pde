@@ -19,6 +19,17 @@ class Menu {
       buttons.get(q).display(xst + (((float)q % 4.0 + 1.0)/5.0)*xst/2,200 + ((q / 4)*100));
     }
   }
+  
+  void deleteButton () { 
+    stroke (255); 
+    fill (50); 
+    rect (xst + 20, height - 100, 120, 60, 7); 
+    fill (255); 
+    textSize (20); 
+    textAlign (CENTER, CENTER); 
+    text ("Delete\nStation", xst + 80 , height - 70); 
+  }
+  
   void menuSetup() {
     fill(50);
     rect(xst, 0, wth, height);
@@ -33,6 +44,7 @@ class Menu {
   void display() {
     if(buttonAdded) {
       dispButtons();
+      deleteButton (); 
       buttonAdded = false;
     }
   }
