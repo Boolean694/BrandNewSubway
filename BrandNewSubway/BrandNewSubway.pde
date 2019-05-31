@@ -76,7 +76,7 @@ void setup() {
   color red = color(239, 52, 52);
   color blue = color(0, 0, 204);
   color dgreen = color(34,139,34);
-  color yellow = color(255,255,0);
+  color yellow = color(246,230,86);
 
   Line B = new Line("B", orange);
   Line D = new Line("D", orange);

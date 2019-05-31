@@ -13,6 +13,7 @@ class Station {
     lines = new ArrayList<Line>();
     selected = false;
   }
+  
   public Station(float ix, float iy) {
     x = ix;
     y = iy;
@@ -20,6 +21,7 @@ class Station {
     name = "Station"; 
     selected = false;
   }
+  
   void display() {
     stroke (255); 
     fill(255);
@@ -30,9 +32,11 @@ class Station {
     fill(50);
     //text(name, x, y - 60);
   }
+  
   void setName(String n) {
     name = n;
   }
+  
   void clickedOn() {//displays station info when clicked on    
     if (selected) { 
       fill (0); 
