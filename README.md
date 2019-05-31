@@ -35,9 +35,13 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 - Maisha: Wrote code to draw a line between stations and figured our how to place a station on the map.  
 
 #### 29.05
-- Julian: Didn't code much but calculated math for station order/line display after infill station placement.
-- Maisha: Made the size of the stations smaller and changed its colors. I also started working on displaying the station info when clicking on a station on the map and deleting a station. 
+- We worked on technical difficulties.
 
 #### 30.05
 - Julian: Fixed bugs involving wrong station placement (when user clicks on existing stn), station display bugs.
+- Maisha: Made the size of the stations smaller and changed its colors.
+
+#### 31.05
+- Julian: 
 - Maisha: 
+
