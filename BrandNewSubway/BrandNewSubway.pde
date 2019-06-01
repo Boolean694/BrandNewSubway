@@ -139,4 +139,10 @@ void draw() {
     menu.dispButtons();
     updatebu = false;
   }
+  
+  if (keyPressed) { 
+    if((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z')) {
+      selected.name += key; 
+    }
+  }
 }
