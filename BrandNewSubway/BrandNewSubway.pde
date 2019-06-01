@@ -5,6 +5,8 @@ boolean buttonToggled;
 Line currentToggle;
 Button ctog;
 boolean updatebu = false;
+boolean stnSelected = false;
+Station selected;
 
 void mouseClicked() {
   if (mouseX >= width * 0.65) { //clicked in menu
@@ -19,7 +21,8 @@ void mouseClicked() {
         break;
       } 
     }
-    
+    stnSelected = false;
+    selected = null;
   } 
   
   else { //clicked in map
@@ -33,22 +36,18 @@ void mouseClicked() {
       }
     }
     
-    placeStation (); 
+    
     
     if (useless) {//click on station
+      selected = stns.get(stnnum);
+      stnSelected = true;
       stns.get(stnnum).selected = true;
       //stns.get(stnnum).clickedOn();
     } else {//not click on station
       if (buttonToggled) {
-        Station stn = new Station(mouseX, mouseY);//set this up with currentToggle line, update constructor
-        int curs = 2147483647;
-        int ind = 0;
-        for(Station s : currentToggle.stations) {//gets closest stn in selected line
-          if((int)dist(stn.x,stn.y,s.x,s.y) < curs) {
-            curs = (int)dist(stn.x,stn.y,s.x,s.y);
-            ind = currentToggle.stations.indexOf(s);
-          }
-        }
+        placeStation (); 
+        stnSelected = false;
+        selected = null;
       }
     }
   }
@@ -77,7 +76,7 @@ void setup() {
   color red = color(239, 52, 52);
   color blue = color(0, 0, 204);
   color dgreen = color(34,139,34);
-  color yellow = color(255,255,0);
+  color yellow = color(246,230,86);
 
   Line B = new Line("B", orange);
   Line D = new Line("D", orange);
@@ -130,12 +129,20 @@ void draw() {
   }
   
   for (Station s: stns) { 
-    s.display (); 
-    s.clickedOn (); 
+    s.display(); 
+    if(stnSelected) {
+      selected.clickedOn(); 
+    }
   }
  
   if(updatebu) {
     menu.dispButtons();
     updatebu = false;
+  }
+  
+  if (keyPressed) { 
+    if((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z')) {
+      selected.name += key; 
+    }
   }
 }
