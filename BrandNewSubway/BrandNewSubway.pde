@@ -36,8 +36,6 @@ void mouseClicked() {
       }
     }
     
-    
-    
     if (useless) {//click on station
       selected = stns.get(stnnum);
       stnSelected = true;
@@ -140,7 +138,7 @@ void draw() {
     updatebu = false;
   }
   
-  if (keyPressed) { 
+  if (keyPressed && stnSelected) { 
     if((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z') || key == ' ') {
       selected.name += key; 
     }
@@ -154,5 +152,6 @@ void draw() {
         }
       }
     }
+    println ("Station Name: " + selected.name); 
   }
 }

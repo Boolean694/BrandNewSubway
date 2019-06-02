@@ -18,7 +18,8 @@ class Line {
     textFont (font); 
     textSize (22); 
     fill (255); 
-    text (name, ix + 7, iy + 8);
+    textAlign (CENTER,CENTER); 
+    text (name, ix, iy);
     /*
     x = ix;
     y = iy; 

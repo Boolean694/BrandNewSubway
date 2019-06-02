@@ -30,7 +30,8 @@ class Button {
     PFont font = loadFont ("Arial-BoldMT-32.vlw"); 
     textFont (font); 
     fill (255); 
-    text (lin.name, ix, iy + 17);
+    textAlign (CENTER,CENTER); 
+    text (lin.name, ix, iy );
     x = ix;
     y = iy; 
   }
