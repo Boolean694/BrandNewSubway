@@ -128,6 +128,11 @@ void draw() {
     l.drawLine (); 
   }
   
+  if (keyPressed) { 
+    if((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z') || key == ' ') {
+      selected.name += key; 
+    }
+  }
   for (Station s: stns) { 
     s.display(); 
     if(stnSelected) {
@@ -139,10 +144,5 @@ void draw() {
     menu.dispButtons();
     updatebu = false;
   }
-  
-  if (keyPressed) { 
-    if((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z')) {
-      selected.name += key; 
-    }
-  }
+ 
 }
