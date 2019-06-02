@@ -43,5 +43,9 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 
 #### 31.05
 - Julian: 
-- Maisha: 
+- Maisha: Fixed small bugs in the display. 
+
+#### 01.06
+- Julian: 
+- Maisha: Wrote code that lets you edit the station name, which mostly works but sometimes it registers one letter twice. 
 
