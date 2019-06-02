@@ -9,6 +9,7 @@ boolean stnSelected = false;
 Station selected;
 
 void mouseClicked() {
+  println ("(" + mouseX + " , " + mouseY + ")"); 
   if (mouseX >= width * 0.65) { //clicked in menu
     for (Button b : menu.buttons) { 
       if (dist (mouseX, mouseY, b.x, b.y) < 45) { 

@@ -4,12 +4,14 @@ class Station {
   float x;
   float y;
   String name;
+  String borough; 
   boolean selected; 
 
   public Station(float ix, float iy, String nam) {
     x = ix;
     y = iy;
     name = nam;
+    borough = ""; 
     lines = new ArrayList<Line>();
     selected = false;
   }
@@ -19,6 +21,7 @@ class Station {
     y = iy;
     lines = new ArrayList<Line>();
     name = ""; 
+    borough = ""; 
     selected = false;
   }
   
@@ -32,7 +35,7 @@ class Station {
     fill(50);
     //text(name, x, y - 60);
   }
-  
+    
   void setName(String n) {
     name = n;
   }
@@ -69,5 +72,52 @@ class Station {
        a.stationdisplay (width / 2 - 60, height / 2 - 35);
        */
     }
+  }
+  
+  boolean isBronx (float xcor, float ycor) { 
+    if (xcor <= 475) { 
+      if (xcor >= 23 && xcor <= 94) { 
+        if (ycor >= 104 && ycor <= 112) { 
+          return true; 
+        }
+      }
+      
+      if (xcor > 94 && xcor <= 108) { 
+        if (ycor >= 112 && ycor <= 192) { 
+          return true; 
+        }
+      }
+      
+      if (xcor > 108 && xcor <= 170) { 
+        if (ycor >= 192 && ycor <= 250) { 
+          return true; 
+        }
+      }
+      
+      if (xcor > 170 && xcor <= 237) { 
+        if (ycor >= 250 && ycor <= 252) { 
+          return true; 
+        }
+      }
+      
+      if (xcor > 237 && xcor <= 381) { 
+        if (ycor >= 194 && ycor <= 252) { 
+          return true; 
+        }
+      }
+      
+      if (xcor > 381 && xcor <= 462) { 
+        if (ycor >= 142 && ycor <= 194) { 
+          return true; 
+        }
+      }
+      
+      if (xcor > 462 && xcor <= 475) { 
+        if (ycor >= 0 && ycor <= 142) { 
+          return true; 
+        }
+      }
+    }
+    return false; 
   }
 }
