@@ -141,8 +141,14 @@ void draw() {
   }
   
   if (keyPressed) { 
-    if((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z')) {
+    if((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z') || key == ' ') {
       selected.name += key; 
+    }
+    else { 
+      if (key == BACKSPACE) { 
+        selected.name = selected.name.substring (0,selected.name.length () - 1); 
+        
+      }
     }
   }
 }

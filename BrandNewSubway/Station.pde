@@ -18,7 +18,7 @@ class Station {
     x = ix;
     y = iy;
     lines = new ArrayList<Line>();
-    name = "Station"; 
+    name = ""; 
     selected = false;
   }
   
@@ -47,9 +47,13 @@ class Station {
       rect (x - 80, y- 102, 160, 5);
       textSize (14); 
       stroke (255); 
-      textAlign (RIGHT);
-      text (name, x + 30, y - 75); 
-      
+      textAlign (CENTER, CENTER);
+      if (name.length () < 1) { 
+        text ("Station", x, y - 80); 
+      }
+      else { 
+        text (name, x , y - 80); 
+      }
       float xcor = x - 80 + 20; 
       for (Line l: lines) { 
         l.stationdisplay (xcor, y - 112 +100 - 20); 
