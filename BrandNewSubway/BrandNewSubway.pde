@@ -146,8 +146,12 @@ void draw() {
     }
     else { 
       if (key == BACKSPACE) { 
-        selected.name = selected.name.substring (0,selected.name.length () - 1); 
-        
+        try { 
+          selected.name = selected.name.substring (0,selected.name.length () - 1); 
+        }
+        catch (Exception e) { 
+          selected.name = ""; 
+        }
       }
     }
   }
