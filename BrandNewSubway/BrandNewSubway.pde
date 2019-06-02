@@ -127,7 +127,7 @@ void draw() {
     l.drawLine (); 
   }
   
-  if (keyPressed) { 
+  if (keyPressed && stnSelected) { 
     if((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z') || key == ' ') {
       selected.name += key; 
     }
@@ -142,9 +142,13 @@ void draw() {
       }
     }
   }
+  
   for (Station s: stns) { 
     s.display(); 
     if(stnSelected) {
+      if ( (mouseX < selected.x + 70) && (mouseX > selected.x + 60) && (mouseY < selected.y - 20) && (mouseY > selected.y - 30)) { 
+        selected.selected = false; 
+       }
       selected.clickedOn(); 
     }
   }
