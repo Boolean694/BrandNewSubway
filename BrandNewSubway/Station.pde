@@ -45,7 +45,8 @@ class Station {
       fill (255); 
       noStroke (); 
       rect (x - 80, y- 102, 160, 5);
-      textSize (14); 
+      PFont font = loadFont ("Dialog.plain-18.vlw"); 
+      textFont (font); 
       stroke (255); 
       textAlign (CENTER, CENTER);
       if (name.length () < 1) { 

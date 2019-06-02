@@ -36,8 +36,6 @@ void mouseClicked() {
       }
     }
     
-    
-    
     if (useless) {//click on station
       selected = stns.get(stnnum);
       stnSelected = true;
@@ -116,6 +114,7 @@ void setup() {
 
   menu = new Menu(lines);
 }
+
 void draw() {
   
   PImage map = loadImage ("subwaymap.PNG"); 
