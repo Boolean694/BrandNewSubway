@@ -132,6 +132,12 @@ void draw() {
     if((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z') || key == ' ') {
       selected.name += key; 
     }
+    else { 
+      if (key == BACKSPACE) { 
+        selected.name = selected.name.substring (0,selected.name.length () - 1); 
+        
+      }
+    }
   }
   for (Station s: stns) { 
     s.display(); 
@@ -144,5 +150,4 @@ void draw() {
     menu.dispButtons();
     updatebu = false;
   }
- 
 }
