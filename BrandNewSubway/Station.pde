@@ -11,7 +11,7 @@ class Station {
     x = ix;
     y = iy;
     name = nam;
-    borough = ""; 
+    setBorough (); 
     lines = new ArrayList<Line>();
     selected = false;
   }
@@ -21,7 +21,7 @@ class Station {
     y = iy;
     lines = new ArrayList<Line>();
     name = ""; 
-    borough = ""; 
+    setBorough (); 
     selected = false;
   }
 
@@ -43,12 +43,20 @@ class Station {
   void setBorough () {
     if (isBronx (x, y)) { 
       borough = "Bronx";
-    }
-    if (isManhattan (x, y)) { 
-      borough = "Manhattan";
-    }
-    if (isQueens (x,y)) { 
-      borough = "Queens";   
+    } else { 
+      if (isManhattan (x, y)) { 
+        borough = "Manhattan";
+      } else { 
+        if (isQueens (x, y)) { 
+          borough = "Queens";
+        } else { 
+          if (isBrooklyn (x, y)) { 
+            borough = "Brooklyn";
+          } else {
+            borough = "NA";
+          }
+        }
+      }
     }
   }
 
@@ -72,27 +80,36 @@ class Station {
       } else { 
         text (name, x, y - 80);
       }
+      PFont f = loadFont ("Dialog.plain-16.vlw"); 
+      textFont (f);
+      text (borough, x, y - 60); 
       float xcor = x - 80 + 20; 
       for (Line l : lines) { 
         l.stationdisplay (xcor, y - 112 +100 - 20); 
         xcor += 55;
       }
-      //write code for displaying the lines at a station 
-      /*
-            Line a = new Line ("3", color (255,0,0));
-       a.stationdisplay (width / 2 - 60, height / 2 - 35);
-       */
     }
   }
 
+  boolean btwn (float urx, float ury, float firstx, float firsty, float lastx, float lasty) { 
+    return urx >= firstx && urx <= lastx && ury >= firsty && ury <= lasty;
+  }
+
   boolean isBronx (float xcor, float ycor) { 
-    if (xcor <= 450 && ycor < 194) { 
+    if (btwn (xcor, ycor, 0, 0, 429, 104)) { 
       return true;
     }
-    if (xcor >= 23 && xcor <= 381 && ycor >= 104 && ycor <= 194) { 
+    if (btwn (xcor, ycor, 100, 104, 380, 200)) { 
       return true;
     }
-    if (xcor >= 170 && ycor <= 237 && ycor >= 250 && ycor <= 252) { 
+
+    if (btwn (xcor, ycor, 100, 104, 171, 249)) { 
+      return true;
+    }
+    if (btwn (xcor, ycor, 171, 104, 300, 300)) { 
+      return true;
+    }
+    if (btwn (xcor, ycor, 337, 0, 453, 139)) { 
       return true;
     }
     return false;
@@ -121,10 +138,6 @@ class Station {
     return false;
   }
 
-  boolean btwn (float urx, float ury, float firstx, float firsty, float lastx, float lasty) { 
-    return urx >= firstx && urx <= lastx && ury >= firsty && ury <= lasty;
-  }
-
   boolean isQueens (float xcor, float ycor) { 
     if (btwn (xcor, ycor, 406, 276, 780, 519)) { 
       return true;
@@ -142,6 +155,13 @@ class Station {
       return true;
     }
     if (btwn (xcor, ycor, 500, 64, 706, 150)) { 
+      return true;
+    }
+    return false;
+  }
+
+  boolean isBrooklyn (float xcor, float ycor) { 
+    if (btwn (xcor, ycor, 246, 519, 780, 800)) { 
       return true;
     }
     return false;

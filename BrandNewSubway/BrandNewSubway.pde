@@ -8,13 +8,7 @@ boolean updatebu = false;
 boolean stnSelected = false;
 Station selected;
 
-
-boolean btwn (float urx, float ury, float firstx, float firsty, float lastx, float lasty) { 
-  return urx >= firstx && urx <= lastx && ury >= firsty && ury <= lasty;
-}
-
-void mouseClicked() { 
-  println (isQueens (mouseX, mouseY) + "(" + mouseX + "," + mouseY + ")"); 
+void mouseClicked() {  
   if (mouseX >= width * 0.65) { //clicked in menu
     for (Button b : menu.buttons) { 
       if (dist (mouseX, mouseY, b.x, b.y) < 45) { 
