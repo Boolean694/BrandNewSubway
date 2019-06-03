@@ -53,6 +53,7 @@ void mouseClicked() {
 
 void deleteStation (Station s) { 
   stns.remove (s); 
+  currentToggle.stations.remove (s); 
 }
 
 void placeStation () { 
