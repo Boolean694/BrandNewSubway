@@ -3,9 +3,9 @@ ArrayList<Station> stns;
 Menu menu;
 boolean buttonToggled;
 Line currentToggle;
-Button ctog;
+Button ctog; //current toggled button
 boolean updatebu = false;
-boolean stnSelected = false;
+boolean stnSelected = false; //is a station selected and the display is shown?
 Station selected;
 
 void mouseClicked() {  
@@ -14,6 +14,11 @@ void mouseClicked() {
       if (dist (mouseX, mouseY, b.x, b.y) < 45) { 
         if (ctog != null) {
           ctog.tog = false;
+        }
+        if(menu.buttons.indexOf(b) == menu.buttons.indexOf(ctog)) {
+          ctog = null;
+          buttonToggled = false;
+          return;
         }
         ctog = b;
         currentToggle = b.lin;
@@ -25,7 +30,9 @@ void mouseClicked() {
     }
     stnSelected = false;
     selected = null;
-  } else { //clicked in map
+  }
+  
+  else { //clicked in map
     int stnnum = 0;
     boolean useless = false; //by the end of for loop is true if clicked on station, false if not
     for (int q = 0; q < stns.size(); q++) {
@@ -132,7 +139,7 @@ void draw() {
     l.drawLine ();
   }
 
-  if (keyPressed && stnSelected) { 
+  if (keyPressed && stnSelected) { //typing stn name
     if ((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z') || key == ' ') {
       selected.name += key;
     } else { 
@@ -158,8 +165,10 @@ void draw() {
   }
 
   if (stnSelected && (mouseX < selected.x + 70) && (mouseX > selected.x + 40) && (mouseY < selected.y - 12) && (mouseY > selected.y - 30)) { 
-    selected.selected = false; 
-    deleteStation (selected);
+    if(mousePressed) {
+      selected.selected = false; 
+      deleteStation (selected);
+    }
   }
 
   if (updatebu) {
