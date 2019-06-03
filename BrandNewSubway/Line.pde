@@ -17,7 +17,12 @@ class Line {
     PFont font = loadFont ("Arial-BoldMT-32.vlw"); 
     textFont (font); 
     textSize (22); 
-    fill (255); 
+    if (lin.name.equals ("N") || lin.name.equals ("Q") || lin.name.equals ("R") || lin.name.equals ("W")) { 
+      fill (0); 
+    }
+    else { 
+      fill (255); 
+    }
     textAlign (CENTER,CENTER); 
     text (name, ix, iy);
     /*

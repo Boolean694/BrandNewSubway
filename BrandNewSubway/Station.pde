@@ -67,22 +67,25 @@ class Station {
       rect (x - 80, y-112, 160, 100); 
       fill (255); 
       noStroke (); 
-      rect (x - 80, y- 102, 160, 5);
+      rect (x - 80, y- 92, 160, 5);
       stroke (192, 192, 192); 
-      line (x + 60, y - 30, x + 70, y - 20); 
-      line (x + 70, y - 30, x + 60, y - 20); 
+      line (x + 67, y - 105, x + 73, y - 98); 
+      line (x + 73, y - 105, x + 67, y  - 98); 
+      PFont f2 = loadFont ("Dialog.plain-12.vlw"); 
+      textFont (f2); 
+      text ("Delete", x + 55, y - 25); 
       PFont font = loadFont ("Dialog.plain-18.vlw"); 
       textFont (font); 
       stroke (255); 
       textAlign (CENTER, CENTER);
       if (name.length () < 1) { 
-        text ("Station", x, y - 80);
+        text ("Station", x, y - 75);
       } else { 
-        text (name, x, y - 80);
+        text (name, x, y - 75);
       }
       PFont f = loadFont ("Dialog.plain-16.vlw"); 
       textFont (f);
-      text (borough, x, y - 60); 
+      text (borough, x, y - 57); 
       float xcor = x - 80 + 20; 
       for (Line l : lines) { 
         l.stationdisplay (xcor, y - 112 +100 - 20); 
