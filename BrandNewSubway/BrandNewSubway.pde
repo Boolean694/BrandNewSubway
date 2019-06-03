@@ -8,25 +8,30 @@ boolean updatebu = false;
 boolean stnSelected = false;
 Station selected;
 
-void mouseClicked() {
-  println ("(" + mouseX + " , " + mouseY + ")"); 
+
+boolean btwn (float urx, float ury, float firstx, float firsty, float lastx, float lasty) { 
+  return urx >= firstx && urx <= lastx && ury >= firsty && ury <= lasty;
+}
+
+void mouseClicked() { 
+  println (isQueens (mouseX, mouseY) + "(" + mouseX + "," + mouseY + ")"); 
   if (mouseX >= width * 0.65) { //clicked in menu
     for (Button b : menu.buttons) { 
       if (dist (mouseX, mouseY, b.x, b.y) < 45) { 
-        if(ctog != null){ctog.tog = false;}
+        if (ctog != null) {
+          ctog.tog = false;
+        }
         ctog = b;
         currentToggle = b.lin;
         buttonToggled = true; 
         updatebu = true;
         println (currentToggle.name); 
         break;
-      } 
+      }
     }
     stnSelected = false;
     selected = null;
-  } 
-  
-  else { //clicked in map
+  } else { //clicked in map
     int stnnum = 0;
     boolean useless = false; //by the end of for loop is true if clicked on station, false if not
     for (int q = 0; q < stns.size(); q++) {
@@ -36,7 +41,7 @@ void mouseClicked() {
         break;
       }
     }
-    
+
     if (useless) {//click on station
       selected = stns.get(stnnum);
       stnSelected = true;
@@ -59,14 +64,14 @@ void placeStation () {
     Station adding = new Station (xcor, ycor); 
     currentToggle.stations.add (adding); 
     adding.lines.add (currentToggle); 
-    stns.add (adding); 
+    stns.add (adding);
   }
 }
 
 void setup() {
   size(1200, 800);
   fill(255);
-  
+
   stns = new ArrayList<Station>();
   lines = new ArrayList<Line>();
   buttonToggled = false;
@@ -74,8 +79,8 @@ void setup() {
   color orange = color(255, 140, 0);
   color red = color(239, 52, 52);
   color blue = color(0, 0, 204);
-  color dgreen = color(34,139,34);
-  color yellow = color(246,230,86);
+  color dgreen = color(34, 139, 34);
+  color yellow = color(246, 230, 86);
 
   Line B = new Line("B", orange);
   Line D = new Line("D", orange);
@@ -90,10 +95,10 @@ void setup() {
   Line four = new Line("4", dgreen);
   Line five = new Line("5", dgreen);
   Line six = new Line("6", dgreen);
-  Line N = new Line("N",yellow);
-  Line Q = new Line("Q",yellow);
-  Line R = new Line("R",yellow);
-  Line W = new Line("W",yellow);
+  Line N = new Line("N", yellow);
+  Line Q = new Line("Q", yellow);
+  Line R = new Line("R", yellow);
+  Line W = new Line("W", yellow);
   lines.add(A);
   lines.add(C);
   lines.add(E);
@@ -117,44 +122,43 @@ void setup() {
 }
 
 void draw() {
-  
+
   PImage map = loadImage ("subwaymap.PNG"); 
   map.resize (780, height); 
-  image (map, 0,0); 
-  
+  image (map, 0, 0); 
+
   menu.display();
-  
+
   for (Line l : lines) { 
-    l.drawLine (); 
+    l.drawLine ();
   }
-  
+
   if (keyPressed && stnSelected) { 
-    if((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z') || key == ' ') {
-      selected.name += key; 
-    }
-    else { 
+    if ((key >= 'A' && key <= 'Z') || (key >= 'a' && key <= 'z') || key == ' ') {
+      selected.name += key;
+    } else { 
       if (key == BACKSPACE) { 
         try { 
-          selected.name = selected.name.substring (0,selected.name.length () - 1); 
+          selected.name = selected.name.substring (0, selected.name.length () - 1);
         }
         catch (Exception e) { 
-          selected.name = ""; 
+          selected.name = "";
         }
       }
     }
   }
-  
-  for (Station s: stns) { 
+
+  for (Station s : stns) { 
     s.display(); 
-    if(stnSelected) {
+    if (stnSelected) {
       if ( (mouseX < selected.x + 70) && (mouseX > selected.x + 60) && (mouseY < selected.y - 20) && (mouseY > selected.y - 30)) { 
-        selected.selected = false; 
-       }
-      selected.clickedOn(); 
+        selected.selected = false;
+      }
+      selected.clickedOn();
     }
   }
- 
-  if(updatebu) {
+
+  if (updatebu) {
     menu.dispButtons();
     updatebu = false;
   }
