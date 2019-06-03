@@ -42,13 +42,13 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 - Maisha: Made the size of the stations smaller and changed its colors.
 
 #### 31.05
-- Julian: 
+- Julian: Made sure station display disappeared when user does another action.
 - Maisha: Fixed small bugs in the display. 
 
 #### 01.06
-- Julian: 
+- Julian: Took the SAT and had some family stuff (couldn't code really)
 - Maisha: Wrote code that lets you edit the station name, which mostly works but sometimes it registers one letter twice. 
 
 #### 02.06
-- Julian: 
+- Julian: Made sure station only gets deleted when delete button is clicked on, enabled button untoggling. (forgot to commit last night)
 - Maisha: Work code that lets the station display what borough a station is in. I also started working on how to delete a station. 
