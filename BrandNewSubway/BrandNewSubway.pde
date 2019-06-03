@@ -52,14 +52,7 @@ void mouseClicked() {
 }
 
 void deleteStation (Station s) { 
-  int i = 0; 
-  while (i < stns.size ()) { 
-    if (stns.get (i).equals (s)) { 
-      stns.remove (i);
-    } else { 
-      i ++;
-    }
-  }
+  stns.remove (s); 
 }
 
 void placeStation () { 
