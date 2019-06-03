@@ -51,4 +51,4 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 
 #### 02.06
 - Julian: 
-- Maisha: Work code that lets the station display what borough a station is in. 
+- Maisha: Work code that lets the station display what borough a station is in. I also started working on how to delete a station. 
