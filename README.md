@@ -49,3 +49,6 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 - Julian: 
 - Maisha: Wrote code that lets you edit the station name, which mostly works but sometimes it registers one letter twice. 
 
+#### 02.06
+- Julian: 
+- Maisha: Work code that lets the station display what borough a station is in. 
