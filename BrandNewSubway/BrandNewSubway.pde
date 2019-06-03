@@ -51,6 +51,17 @@ void mouseClicked() {
   }
 }
 
+void deleteStation (Station s) { 
+  int i = 0; 
+  while (i < stns.size ()) { 
+    if (stns.get (i).equals (s)) { 
+      stns.remove (i);
+    } else { 
+      i ++;
+    }
+  }
+}
+
 void placeStation () { 
   if (mouseX < width * .65 && buttonToggled && get (mouseX, mouseY) != -6174228) { //if a line is selected and mouseX and mouseY is not over water 
     int xcor = mouseX; 
@@ -150,6 +161,11 @@ void draw() {
       }
       selected.clickedOn();
     }
+  }
+
+  if (stnSelected && (mouseX < selected.x + 70) && (mouseX > selected.x + 40) && (mouseY < selected.y - 12) && (mouseY > selected.y - 30)) { 
+    selected.selected = false; 
+    deleteStation (selected);
   }
 
   if (updatebu) {
