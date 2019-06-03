@@ -2,7 +2,7 @@ class Button {
   int type; //0: line, 1: custom line
   Line lin; 
   float x, y; 
-  boolean tog;
+  boolean tog; //toggled?
 
   public Button (Line l) { 
     type = 0; 
