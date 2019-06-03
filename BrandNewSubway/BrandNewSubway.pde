@@ -145,7 +145,7 @@ void draw() {
   for (Station s : stns) { 
     s.display(); 
     if (stnSelected) {
-      if ( (mouseX < selected.x + 70) && (mouseX > selected.x + 60) && (mouseY < selected.y - 20) && (mouseY > selected.y - 30)) { 
+      if ( (mouseX < selected.x + 73) && (mouseX > selected.x + 67) && (mouseY < selected.y - 98) && (mouseY > selected.y - 105)) { 
         selected.selected = false;
       }
       selected.clickedOn();
