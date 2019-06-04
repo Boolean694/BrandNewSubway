@@ -119,7 +119,21 @@ void placeStation () {
       }
     }
     else {
+      Station o = currentToggle.stations.get(stind - 1);
+      float a = dist(sel.x,sel.y,o.x,o.y);
+      float b = dist(mouseX,mouseY,sel.x,sel.y);
+      float c = dist(mouseX,mouseY,o.x,o.y);
+      float theta = acos((sq(a) + sq(b) - sq(c))/(2 * a * b)); //law of cosines
+      float angle = degrees(theta); //angle adding/sel/o
       
+      System.out.print(angle);
+      
+      if(angle > 90 && angle < 270) {//add between stns
+        currentToggle.stations.add(stind,adding);
+      }
+      else {//add end
+        currentToggle.stations.add(stind + 1,adding);
+      }
     }
     /*int xcor = mouseX; 
     int ycor = mouseY;
