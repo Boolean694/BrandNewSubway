@@ -52,3 +52,7 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 #### 02.06
 - Julian: Made sure station only gets deleted when delete button is clicked on, enabled button untoggling. (forgot to commit last night)
 - Maisha: Work code that lets the station display what borough a station is in. I also started working on how to delete a station. 
+
+#### 03.06
+- Julian: Changed display for toggled buttons and restructured placeStation() so that infill stations are placed appropriately in relation to the other stations on the line (work in progress).
+-Maisha: 
