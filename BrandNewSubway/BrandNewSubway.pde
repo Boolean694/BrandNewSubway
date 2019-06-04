@@ -67,13 +67,30 @@ void deleteStation (Station s) {
 }
 
 void placeStation () { 
-  if (mouseX < width * .65 && buttonToggled && get (mouseX, mouseY) != -6174228) { //if a line is selected and mouseX and mouseY is not over water 
-    int xcor = mouseX; 
+  if (mouseX < width * .65 && buttonToggled && get (mouseX, mouseY) != -6174228) { //if a line is selected and mouseX and mouseY is not over water
+    int stind = 0;
+    float curlo = 2147483647;
+    for(Station s: currentToggle.stations) {//find closest existing stn to new stn
+      if(dist(mouseX,mouseY,s.x,s.y) < curlo) {
+        curlo = dist(mouseX,mouseY,s.x,s.y);
+        stind = currentToggle.stations.indexOf(s);
+      }
+    }
+    if(stind == 0) { //if closest is first stn
+      
+    }
+    else if(stind == currentToggle.stations.size() - 1) { //if closest is last stn
+      
+    }
+    else {
+      
+    }
+    /*int xcor = mouseX; 
     int ycor = mouseY;
     Station adding = new Station (xcor, ycor); 
     currentToggle.stations.add (adding); 
     adding.lines.add (currentToggle); 
-    stns.add (adding);
+    stns.add (adding); */
   }
 }
 
