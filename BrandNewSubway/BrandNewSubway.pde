@@ -15,12 +15,15 @@ void mouseClicked() {
         if (ctog != null) {
           ctog.tog = false;
         }
-        if(menu.buttons.indexOf(b) == menu.buttons.indexOf(ctog)) {
+        if(menu.buttons.indexOf(b) == menu.buttons.indexOf(ctog)) {//untoggle
+          ctog.tog = false;
+          updatebu = true;
           ctog = null;
           buttonToggled = false;
           return;
         }
         ctog = b;
+        ctog.tog = true;
         currentToggle = b.lin;
         buttonToggled = true; 
         updatebu = true;
