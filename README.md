@@ -58,4 +58,5 @@ A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 -Maisha: Had to go to the hospital so I couldn't really work, but I did work on fixing our UML Diagram. 
 
 #### 04.06 
+- Julian: Fixed infill station placement, other formatting changes.
 - Maisha: Worked on drawing transfers between stations. 
