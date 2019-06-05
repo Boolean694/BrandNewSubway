@@ -95,17 +95,17 @@ void placeStation () {
       System.out.println(angle);
       
       if(angle > 90 && angle < 270) {//add between stns
-        currentToggle.stations.add(1,adding);
+        currentToggle.stations.add(0,adding);
       }
       else {//add beginning
-        currentToggle.stations.add(0,adding);
+        currentToggle.stations.add(1,adding);
       }
     }
     else if(stind == currentToggle.stations.size() - 1) { //if closest is last stn
       Station o = currentToggle.stations.get(currentToggle.stations.size() - 2);
       float a = dist(sel.x,sel.y,o.x,o.y);
-      float b = dist(mouseX,mouseY,sel.x,sel.y);
-      float c = dist(mouseX,mouseY,o.x,o.y);
+      float b = dist(mouseX,mouseY,o.x,o.y);
+      float c = dist(mouseX,mouseY,sel.x,sel.y);
       float theta = acos((sq(a) + sq(b) - sq(c))/(2 * a * b)); //law of cosines
       float angle = degrees(theta); //angle adding/sel/o
       
@@ -115,7 +115,7 @@ void placeStation () {
         currentToggle.stations.add(currentToggle.stations.size() - 2,adding);
       }
       else {//add end
-        currentToggle.stations.add(currentToggle.stations.size() - 1,adding);
+        currentToggle.stations.add(adding);
       }
     }
     else {
@@ -129,10 +129,10 @@ void placeStation () {
       System.out.print(angle);
       
       if(angle > 90 && angle < 270) {//add between stns
-        currentToggle.stations.add(stind,adding);
+        currentToggle.stations.add(stind + 1,adding);
       }
       else {//add end
-        currentToggle.stations.add(stind + 1,adding);
+        currentToggle.stations.add(stind,adding);
       }
     }
     /*int xcor = mouseX; 
