@@ -6,6 +6,7 @@ class Station {
   String name;
   String borough; 
   boolean selected; 
+  ArrayList <Station> transfers; 
 
   public Station(float ix, float iy, String nam) {
     x = ix;
@@ -13,6 +14,7 @@ class Station {
     name = nam;
     setBorough (); 
     lines = new ArrayList<Line>();
+    transfers = new ArrayList <Station> (); 
     selected = false;
   }
 
@@ -20,6 +22,7 @@ class Station {
     x = ix;
     y = iy;
     lines = new ArrayList<Line>();
+    transfers = new ArrayList <Station> (); 
     name = ""; 
     setBorough (); 
     selected = false;
@@ -38,6 +41,17 @@ class Station {
 
   void setName(String n) {
     name = n;
+  }
+  
+  void drawTransferLines () { 
+    try { 
+      fill (0); 
+      for (int i = 0; i < transfers.size (); i += 2) { 
+        line (transfers.get (i).x, transfers.get (i).y, transfers.get (i + 1).x, transfers.get (i + 1).y); 
+      }
+    }
+    catch (Exception e) { 
+    }
   }
 
   void setBorough () {
