@@ -37,7 +37,6 @@ void mouseClicked() {
         currentToggle = b.lin;
         buttonToggled = true; 
         updatebu = true;
-        println (currentToggle.name); 
         break;
       }
     }
@@ -118,8 +117,6 @@ void placeStation () {
       float theta = acos((sq(a) + sq(b) - sq(c))/(2 * a * b)); //law of cosines
       float angle = degrees(theta); //angle adding/sel/o
       
-      System.out.println(angle);
-      
       if(angle > 90 && angle < 270) {//add between stns
         currentToggle.stations.add(0,adding);
       }
@@ -134,9 +131,7 @@ void placeStation () {
       float c = dist(mouseX,mouseY,sel.x,sel.y);
       float theta = acos((sq(a) + sq(b) - sq(c))/(2 * a * b)); //law of cosines
       float angle = degrees(theta); //angle adding/sel/o
-      
-      System.out.print(angle);
-      
+           
       if(angle > 90 && angle < 270) {//add between stns
         currentToggle.stations.add(currentToggle.stations.size() - 2,adding);
       }
@@ -151,8 +146,6 @@ void placeStation () {
       float c = dist(mouseX,mouseY,o.x,o.y);
       float theta = acos((sq(a) + sq(b) - sq(c))/(2 * a * b)); //law of cosines
       float angle = degrees(theta); //angle adding/sel/o
-      
-      System.out.print(angle);
       
       if(angle > 90 && angle < 270) {//add between stns
         currentToggle.stations.add(stind + 1,adding);
@@ -177,6 +170,10 @@ void setup() {
   color blue = color(0, 0, 204);
   color dgreen = color(34, 139, 34);
   color yellow = color(246, 230, 86);
+  color brown = color(139,69,19);
+  color purple = color(148,0,211);
+  color gray = color(128,128,128);
+  color lgreen = color(50,205,50);
 
   Line B = new Line("B", orange);
   Line D = new Line("D", orange);
@@ -195,6 +192,12 @@ void setup() {
   Line Q = new Line("Q", yellow);
   Line R = new Line("R", yellow);
   Line W = new Line("W", yellow);
+  Line J = new Line("J", brown);
+  Line Z = new Line("Z", brown);
+  Line seven = new Line("7",purple);
+  Line L = new Line("L", gray);
+  Line G = new Line("G", lgreen);
+  
   lines.add(A);
   lines.add(C);
   lines.add(E);
@@ -212,7 +215,11 @@ void setup() {
   lines.add(Q);
   lines.add(R);
   lines.add(W);
-
+  lines.add(J);
+  lines.add(Z);
+  lines.add(seven);
+  lines.add(L);
+  lines.add(G);
 
   menu = new Menu(lines);
 }
