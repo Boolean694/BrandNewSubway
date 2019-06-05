@@ -27,7 +27,7 @@ class Menu {
     fill (255); 
     textSize (20); 
     textAlign (CENTER, CENTER); 
-    text ("Transfer\nStations", xst + 80 , height - 70); 
+    text ("Connect\nStations", xst + 80 , height - 70); 
   }
   
   void menuSetup() {
