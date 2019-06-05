@@ -320,10 +320,16 @@ void draw() {
   for (Station s : stns) { 
     s.display(); 
     if (stnSelected) {
+      boolean ra = true;
       if ( (mouseX < selected.x + 73) && (mouseX > selected.x + 67) && (mouseY < selected.y - 98) && (mouseY > selected.y - 105)) { 
+        if(mousePressed) {
         selected.selected = false;
+        ra = false;
+        }
       }
+      if(ra) {
       selected.clickedOn();
+      }
     }
     //s.drawTransferLines (); 
   }
