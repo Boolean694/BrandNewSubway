@@ -20,14 +20,14 @@ class Menu {
     }
   }
   
-  void deleteButton () { 
+  void transferButton () { 
     stroke (255); 
     fill (50); 
     rect (xst + 20, height - 100, 120, 60, 7); 
     fill (255); 
     textSize (20); 
     textAlign (CENTER, CENTER); 
-    text ("Delete\nStation", xst + 80 , height - 70); 
+    text ("Transfer\nStations", xst + 80 , height - 70); 
   }
   
   void menuSetup() {
@@ -44,8 +44,10 @@ class Menu {
   void display() {
     if(buttonAdded) {
       dispButtons();
-      deleteButton (); 
+      transferButton (); 
       buttonAdded = false;
+      transferButton (); 
     }
   }
+ 
 }

@@ -7,9 +7,18 @@ Button ctog; //current toggled button
 boolean updatebu = false;
 boolean stnSelected = false; //is a station selected and the display is shown?
 Station selected;
+boolean makingTransfers; 
+Station transfer1; 
+Station transfer2; 
 
 void mouseClicked() {  
   if (mouseX >= width * 0.65) { //clicked in menu
+    if (mouseX > width * 0.65 + 20 && mouseX < width *.65 + 140 && mouseY > height - 100 && mouseY < height - 40) { 
+      makingTransfers = true; 
+    }
+    else { 
+      makingTransfers = false; 
+    }
     for (Button b : menu.buttons) { 
       if (dist (mouseX, mouseY, b.x, b.y) < 45) { 
         if (ctog != null) {
@@ -47,10 +56,22 @@ void mouseClicked() {
     }
 
     if (useless) {//click on station
-      selected = stns.get(stnnum);
-      stnSelected = true;
-      stns.get(stnnum).selected = true;
-      //stns.get(stnnum).clickedOn();
+      if (!makingTransfers) { 
+        selected = stns.get(stnnum);
+        stnSelected = true;
+        stns.get(stnnum).selected = true;
+        //stns.get(stnnum).clickedOn();
+      }
+      else { 
+        if (transfer1 == null) { 
+          transfer1 = stns.get (stnnum); 
+        }
+        else { 
+          transfer2 = stns.get (stnnum); 
+          transfer1.transfers.add (transfer2); 
+          transfer2.transfers.add (transfer1); 
+        }
+      }
     } else {//not click on station
       if (buttonToggled) {
         placeStation (); 
@@ -135,12 +156,6 @@ void placeStation () {
         currentToggle.stations.add(stind,adding);
       }
     }
-    /*int xcor = mouseX; 
-    int ycor = mouseY;
-    Station adding = new Station (xcor, ycor); 
-    currentToggle.stations.add (adding); 
-    adding.lines.add (currentToggle); 
-    stns.add (adding); */
   }
 }
 
@@ -232,6 +247,7 @@ void draw() {
       }
       selected.clickedOn();
     }
+    s.drawTransferLines (); 
   }
 
   if (stnSelected && (mouseX < selected.x + 70) && (mouseX > selected.x + 40) && (mouseY < selected.y - 12) && (mouseY > selected.y - 30)) { 
