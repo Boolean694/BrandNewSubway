@@ -1,6 +1,14 @@
 # BrandNewSubway
 A recreation of the online game Brand New Subway http://jpw.nyc/subway/
 
+Features:
+Click on a line button in the menu to select a station, click it again to unselect.
+Connect stations by clicking the "Connect Stations" button and selected two stations.
+Click on an existing station while having selected a line that's not at said station yet in order to add the current line to that station.
+All the other basic features are implemented the same (or very similarly) as in the actual game (linked above).
+
+Enjoy!
+
 ## Dev log
 
 #### 20.05
