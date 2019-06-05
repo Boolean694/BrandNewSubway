@@ -7,9 +7,10 @@ Button ctog; //current toggled button
 boolean updatebu = false;
 boolean stnSelected = false; //is a station selected and the display is shown?
 Station selected;
-boolean makingTransfers; 
+boolean makingTransfers = false; 
 Station transfer1; 
 Station transfer2; 
+ArrayList <float[]> transfers = new ArrayList <float[]> (); 
 
 void mouseClicked() {  
   if (mouseX >= width * 0.65) { //clicked in menu
@@ -70,6 +71,10 @@ void mouseClicked() {
           transfer2 = stns.get (stnnum); 
           transfer1.transfers.add (transfer2); 
           transfer2.transfers.add (transfer1); 
+          float[] tline = { transfer1.x, transfer1.y, transfer2.x, transfer2.y}; 
+          transfers.add (tline); 
+          transfer1 = null; 
+          transfer2 = null;
         }
       }
     } else {//not click on station
@@ -247,9 +252,12 @@ void draw() {
       }
       selected.clickedOn();
     }
-    s.drawTransferLines (); 
+    //s.drawTransferLines (); 
   }
-
+  
+  for (float[] t : transfers) { 
+    line (t[0], t[1], t[2], t[3]); 
+  }
   if (stnSelected && (mouseX < selected.x + 70) && (mouseX > selected.x + 40) && (mouseY < selected.y - 12) && (mouseY > selected.y - 30)) { 
     if(mousePressed) {
       selected.selected = false; 

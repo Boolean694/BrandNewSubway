@@ -15,6 +15,7 @@ class Station {
     setBorough (); 
     lines = new ArrayList<Line>();
     transfers = new ArrayList <Station> (); 
+    transfers.add (this); 
     selected = false;
   }
 
@@ -23,6 +24,7 @@ class Station {
     y = iy;
     lines = new ArrayList<Line>();
     transfers = new ArrayList <Station> (); 
+    transfers.add (this); 
     name = ""; 
     setBorough (); 
     selected = false;
@@ -43,16 +45,18 @@ class Station {
     name = n;
   }
   
+  /*
   void drawTransferLines () { 
     try { 
       fill (0); 
-      for (int i = 0; i < transfers.size (); i += 2) { 
+      for (int i = 0; i < transfers.size (); i += 3) { 
         line (transfers.get (i).x, transfers.get (i).y, transfers.get (i + 1).x, transfers.get (i + 1).y); 
       }
     }
     catch (Exception e) { 
     }
   }
+  */
 
   void setBorough () {
     if (isBronx (x, y)) { 
